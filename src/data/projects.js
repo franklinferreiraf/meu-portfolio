@@ -30,8 +30,8 @@ export const projects = [
       
       O sistema permite a abertura e acompanhamento de Ordens de Serviço (OS), gestão de planos de manutenção preventiva e controle de estoque de peças de reposição, gerando indicadores (KPIs) de disponibilidade e confiabilidade dos ativos.
     `,
-    image: "/manutencao.png",
-    techs: ["Java", "Spring Boot", "PostgreSQL", "React", "Material UI"],
+    image: "/ejc.jpg",
+    techs: ["TypeScript", "React", "JavaScript", "Tailwind"],
     features: [
       "Gestão de Ordens de Serviço (Corretiva/Preventiva)",
       "Cadastro de Ativos e Árvore de Equipamentos",
@@ -39,7 +39,7 @@ export const projects = [
       "Controle de Estoque de Peças",
       "Dashboard com KPIs (MTBF, MTTR)"
     ],
-    repoLink: "https://github.com/seu-usuario/manutencao",
+    repoLink: "https://github.com/franklinferreiraf/site-manutencao-industria",
     demoLink: "#",
     status: "Concluído"
   },
