@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Puxa o Tailwind v4 */
+@import "tailwindcss";
+
+/* Configuração de Cores e Fontes da V4 */
+@theme {
+  --color-background: #050505;
+  --color-card: #0f0f13;
+  --color-cardBorder: #1f1f2e;
+  --color-primary: #4F46E5;
+  --color-secondary: #3B82F6;
+  --color-accent: #8B5CF6;
+  --color-muted: #9CA3AF;
+  
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Utilitários customizados no padrão V4 */
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent;
+}
+
+@utility card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(79,70,229,0.15)];
+}
+
+/* Estilos globais básicos */
+@layer base {
+  body {
+    @apply bg-background text-gray-200 font-sans antialiased overflow-x-hidden;
+  }
+}
