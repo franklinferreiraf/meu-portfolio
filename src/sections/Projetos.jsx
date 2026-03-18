@@ -1,6 +1,6 @@
 // src/sections/Projetos.jsx
 import React from 'react';
-import { projetosLista } from '../data'; // Puxando a nossa lista de sistemas
+import { projetosLista } from '../data';
 
 const Projetos = () => {
   return (
@@ -16,7 +16,7 @@ const Projetos = () => {
         </p>
       </div>
 
-      {/* Grid de Projetos (2 colunas no PC, 1 coluna no celular) */}
+      {/* Grid de Projetos */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projetosLista.map((projeto) => (
           <div 
@@ -24,15 +24,28 @@ const Projetos = () => {
             className="bg-card border border-cardBorder rounded-2xl overflow-hidden card-hover flex flex-col"
           >
             
-            {/* Capa do Projeto (Fundo escuro com a primeira letra do título) */}
-            <div className="h-56 w-full bg-gradient-to-br from-[#12121a] to-[#0a0a0f] flex items-center justify-center relative group">
-              {/* Efeito de brilho que aparece no hover */}
-              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            {/* Capa do Projeto (Imagem ou Letra) */}
+            <div className="h-56 w-full bg-gradient-to-br from-[#12121a] to-[#0a0a0f] flex items-center justify-center relative group overflow-hidden border-b border-cardBorder/50">
               
-              {/* Pega automaticamente a primeira letra do nome do projeto */}
-              <span className="text-5xl font-bold text-white/10 group-hover:text-primary/30 transition-colors duration-300 tracking-widest uppercase">
-                {projeto.titulo.charAt(0)}
-              </span>
+              {projeto.imagem ? (
+                /* Se tiver imagem, mostra ela com efeito de zoom no hover */
+                <img 
+                  src={projeto.imagem} 
+                  alt={`Capa do projeto ${projeto.titulo}`} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              ) : (
+                /* Se NÃO tiver imagem, mostra a Letra como plano B */
+                <>
+                  <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="text-5xl font-bold text-white/10 group-hover:text-primary/30 transition-colors duration-300 tracking-widest uppercase relative z-10">
+                    {projeto.titulo.charAt(0)}
+                  </span>
+                </>
+              )}
+              
+              {/* Overlay sutil em cima da imagem para não ofuscar o resto do card */}
+              <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-300 pointer-events-none"></div>
             </div>
 
             {/* Informações do Projeto */}
@@ -42,7 +55,7 @@ const Projetos = () => {
                 <p className="text-muted text-sm leading-relaxed">{projeto.descricao}</p>
               </div>
 
-              {/* Tags (React, Node, etc.) */}
+              {/* Tags */}
               <div className="flex flex-wrap gap-2 mt-auto pt-2">
                 {projeto.tags.map((tag, index) => (
                   <span 
