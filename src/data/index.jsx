@@ -117,23 +117,23 @@ export const habilidades = [
 export const experiencias = [
   {
     id: 1,
-    ano: "2025 - Presente",
+    ano: "2026 - Presente",
     cargo: "Desenvolvedor Full Stack",
-    empresa: "Projetos Freelance & Autoria Própria",
-    descricao: "Desenvolvimento de sistemas completos, incluindo o projeto FFSystem (front-end e back-end) e a criação de websites com foco em UI/UX para clientes do setor de Manutenção Industrial."
+    empresa: "Projeto Europa Pra VC",
+    descricao: "A EuropaPraVC é uma plataforma moderna de e-commerce e facilitação de compras, projetada para conectar clientes a produtos exclusivos da Europa. Com o lema Sua ponte para a Europa, o sistema atua como uma vitrine digital inteligente e um portal seguro para encomendas internacionais."
   },
   {
     id: 2,
-    ano: "2025",
-    cargo: "Desenvolvedor Mobile & Back-end",
-    empresa: "Projetos de Software",
-    descricao: "Criação do aplicativo mobile 'SOS Saúde' utilizando Flutter para instruções de primeiros socorros. Desenvolvimento do back-end para a plataforma de entregas 'Tia Lu Delivery'."
+    ano: "2026",
+    cargo: "Desenvolvedor Frontend",
+    empresa: "Grupo Mais Saúde",
+    descricao: "O site GP Mais Saúde apresenta uma empresa especializada em serviços de saúde."
   },
   {
     id: 3,
-    ano: "2025",
-    cargo: "Desenvolvedor de Software",
-    empresa: "Mannet-Aviation (Projeto Futurefly)",
-    descricao: "Atuação no desenvolvimento e estruturação do projeto 'futurefly', focado em soluções digitais e integração de sistemas."
+    ano: "2025 - 2026",
+    cargo: "Desenvolvedor Frontend & Backend",
+    empresa: "FFSystem",
+    descricao: "O FFSystem é uma plataforma moderna e completa de Frente de Caixa (PDV) e Gestão Empresarial (ERP Light), desenhada para automatizar e simplificar o dia a dia de pequenos e médios comércios."
   }
 ];
