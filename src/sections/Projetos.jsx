@@ -67,20 +67,37 @@ const Projetos = () => {
                 ))}
               </div>
 
-              {/* Links de Ação */}
+              {/* Links de Ação (Aparecem apenas se o link existir nos dados) */}
               <div className="flex gap-4 mt-2 pt-5 border-t border-cardBorder/30">
-                <a href="#" className="flex items-center gap-1.5 text-sm font-medium text-muted hover:text-white transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                  </svg>
-                  Ver Projeto
-                </a>
-                <a href="#" className="flex items-center gap-1.5 text-sm font-medium text-muted hover:text-white transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                  </svg>
-                  Código
-                </a>
+                
+                {projeto.linkProjeto && (
+                  <a 
+                    href={projeto.linkProjeto} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-sm font-medium text-muted hover:text-white transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    Ver Projeto
+                  </a>
+                )}
+
+                {projeto.linkCodigo && (
+                  <a 
+                    href={projeto.linkCodigo} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-sm font-medium text-muted hover:text-white transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    Código
+                  </a>
+                )}
+
               </div>
             </div>
 
