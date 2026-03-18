@@ -1,5 +1,3 @@
-// src/data/index.jsx
-
 export const sobreCards = [
   {
     id: 1,
@@ -37,9 +35,11 @@ export const projetosLista = [
   {
     id: 1,
     titulo: "FFSystem",
-    descricao: "Sistema completo com integração fluida entre front-end e back-end.",
+    descricao: "Sistema PDV para comércios locais.",
     tags: ["React", "Node.js", "Integração"],
     imagem: "/projetos/ffsystem.png",
+    linkProjeto: "https://site-ffsystem.vercel.app/",
+    linkCodigo: "",
   },
   {
     id: 2,
@@ -47,6 +47,8 @@ export const projetosLista = [
     descricao: "Site para manutenção industrial de Alta Performace.",
     tags: ["React", "Javascript", "UI/UX"],
     imagem: "/projetos/manutencaoindustrial.png",
+    linkProjeto: "https://site-manutencao-industria.vercel.app/", 
+    linkCodigo: "",
   },
   {
     id: 3,
@@ -54,20 +56,17 @@ export const projetosLista = [
     descricao: "Plataforma de produtos vindo da Europa para o Brasil.",
     tags: ["Backend", "Frontend", "API", "Docker"],
     imagem: "/projetos/europapravc.png",
+    linkProjeto: "https://europapravc.com/",
+    linkCodigo: "",
   },
   {
     id: 4,
-    titulo: "Futurefly - Mannet Aviation",
-    descricao: "Solução digital voltada para o setor de aviação e integração de sistemas.",
-    tags: ["Web", "Sistema", "Aviação"],
-    imagem: "/projetos/futurefly.png",
-  },
-  {
-    id: 5,
     titulo: "Grupo Mais Saúde",
     descricao: "Site para uma Clínica.",  
     tags: ["Javascript", "React"],
     imagem: "/projetos/gpmaissaude.png",
+    linkProjeto: "https://gpmaisaude.com.br/",
+    linkCodigo: "",
   }
 ];
 
