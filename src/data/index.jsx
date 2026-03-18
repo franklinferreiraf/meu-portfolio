@@ -39,24 +39,35 @@ export const projetosLista = [
     titulo: "FFSystem",
     descricao: "Sistema completo com integração fluida entre front-end e back-end.",
     tags: ["React", "Node.js", "Integração"],
+    imagem: "/projetos/ffsystem.png",
   },
   {
     id: 2,
-    titulo: "SOS Saúde",
-    descricao: "Aplicativo mobile interativo para instruções de primeiros socorros.",
-    tags: ["Flutter", "Mobile", "UI/UX"],
+    titulo: "EJC Group Manutenção Industrial",
+    descricao: "Site para manutenção industrial de Alta Performace.",
+    tags: ["React", "Javascript", "UI/UX"],
+    imagem: "/projetos/manutencaoindustrial.png",
   },
   {
     id: 3,
-    titulo: "Tia Lu Delivery",
-    descricao: "Plataforma de delivery com gerenciamento de pedidos e backend robusto.",
-    tags: ["Backend", "API", "Database"],
+    titulo: "Europa Pra VC",
+    descricao: "Plataforma de produtos vindo da Europa para o Brasil.",
+    tags: ["Backend", "Frontend", "API", "Docker"],
+    imagem: "/projetos/europapravc.png",
   },
   {
     id: 4,
     titulo: "Futurefly - Mannet Aviation",
     descricao: "Solução digital voltada para o setor de aviação e integração de sistemas.",
     tags: ["Web", "Sistema", "Aviação"],
+    imagem: "/projetos/futurefly.png",
+  },
+  {
+    id: 5,
+    titulo: "Grupo Mais Saúde",
+    descricao: "Site para uma Clínica.",  
+    tags: ["Javascript", "React"],
+    imagem: "/projetos/gpmaissaude.png",
   }
 ];
 
