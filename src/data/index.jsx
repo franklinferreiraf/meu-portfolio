@@ -36,7 +36,7 @@ export const projetosLista = [
     id: 1,
     titulo: "FFSystem",
     descricao: "Sistema PDV para comércios locais.",
-    tags: ["React", "Node.js", "Integração"],
+    tags: ["React", "Javascript", "Java", "MySQL"],
     imagem: "/projetos/ffsystem.png",
     linkProjeto: "https://site-ffsystem.vercel.app/",
     linkCodigo: "",
@@ -54,7 +54,7 @@ export const projetosLista = [
     id: 3,
     titulo: "Europa Pra VC",
     descricao: "Plataforma de produtos vindo da Europa para o Brasil.",
-    tags: ["Backend", "Frontend", "API", "Docker"],
+    tags: ["React", "Javascript", ".NET", "C#", "API", "Docker"],
     imagem: "/projetos/europapravc.png",
     linkProjeto: "https://europapravc.com/",
     linkCodigo: "",
@@ -89,7 +89,7 @@ export const habilidades = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
       </svg>
     ),
-    tecnologias: ["Node.js", "APIs REST", "Integrações"]
+    tecnologias: ["Java", ".NET", "C#", "Apex", "APIs REST", "Integrações"]
   },
   {
     id: 3,
@@ -100,7 +100,7 @@ export const habilidades = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    tecnologias: ["Git", "GitHub", "VS Code", "Figma", "Vite"]
+    tecnologias: ["Salesforce", "Git", "GitHub", "VS Code", "Figma", "Vite"]
   },
   {
     id: 4,
@@ -110,7 +110,7 @@ export const habilidades = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
       </svg>
     ),
-    tecnologias: ["MySQL", "PostgreSQL", "MongoDB", "SQL Server"]
+    tecnologias: ["MySQL", "PostgreSQL", "MongoDB", "SQL Server", "Docker"]
   }
 ];
 
@@ -135,5 +135,11 @@ export const experiencias = [
     cargo: "Desenvolvedor Frontend & Backend",
     empresa: "FFSystem",
     descricao: "O FFSystem é uma plataforma moderna e completa de Frente de Caixa (PDV) e Gestão Empresarial (ERP Light), desenhada para automatizar e simplificar o dia a dia de pequenos e médios comércios."
+  },
+  {
+    id: 4,
+    ano: "2024 - 2025",
+    cargo: "Desenvolvedor Salesforce – Projetos e Mentoria Técnica",
+    descricao: "Atuação em projetos Salesforce sob orientação de desenolvedor sênior, desenvolvimento e manutenção de automações utilizando Flows e Apex. Migração de Process Builder para Flows seguindo boas práticas da plataforma."
   }
 ];
