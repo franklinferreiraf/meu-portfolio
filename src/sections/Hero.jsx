@@ -33,7 +33,7 @@ const Hero = () => {
         
         {/* Botão de Baixar Currículo */}
         <a 
-          href="/curriculo.pdf" 
+          href="/CURRICULO - FRANKLIN FERREIRA DOS SANTOS.pdf" 
           download="CURRICULO - FRANKLIN FERREIRA DOS SANTOS.pdf" 
           className="px-8 py-3 rounded-xl bg-transparent border border-cardBorder text-white font-medium hover:bg-card hover:border-primary/50 transition-all flex items-center justify-center gap-2"
         >
