@@ -3,8 +3,12 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-40 pb-20 md:pt-48 md:pb-32 flex flex-col items-center text-center min-h-screen justify-center relative">
+    <section id="home" className="pt-40 pb-20 md:pt-48 md:pb-32 flex flex-col items-center text-center min-h-screen justify-center relative overflow-hidden">
       
+      {/* Background Glows */}
+      <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/20 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-secondary/20 rounded-full blur-[120px] -z-10"></div>
+
       {/* Badge de Status */}
       <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-cardBorder text-xs text-gray-300 mb-8 shadow-sm">
         <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
@@ -13,16 +17,16 @@ const Hero = () => {
 
       {/* Títulos Principais */}
       <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
-        Desenvolvedor <span className="text-gradient">Full Stack</span>
+        Engenheiro <span className="text-gradient">Full Stack</span>
       </h1>
       <h2 className="text-2xl md:text-3xl text-gray-300 font-medium mb-6">
-        Criador de Soluções Digitais
+        Arquitetura de Software & Soluções Digitais
       </h2>
 
       {/* Parágrafo de Apresentação */}
       <p className="max-w-2xl text-muted text-base md:text-lg mb-10 leading-relaxed">
-        Transformando ideias em produtos digitais de alto impacto. Código limpo,
-        performance e design focado em construir a melhor experiência para os usuários.
+        Especialista em construir aplicações robustas, escaláveis e de alta performance. 
+        Foco em entregar valor real através de tecnologia de ponta e design centrado no usuário.
       </p>
 
       {/* Botões de Ação */}
@@ -30,8 +34,18 @@ const Hero = () => {
         <a href="#projetos" className="px-8 py-3 rounded-xl bg-card border border-cardBorder text-white font-medium hover:border-primary/50 hover:shadow-[0_0_15px_rgba(79,70,229,0.2)] transition-all flex items-center justify-center gap-2">
           Ver Projetos
         </a>
-        <a href="#contato" className="px-8 py-3 rounded-xl bg-transparent text-muted font-medium hover:text-white transition-colors flex items-center justify-center">
-          Entrar em Contato
+        
+        {/* Botão de Baixar Currículo */}
+        <a 
+          href="/CURRICULO_FRANKLIN_FERREIRA.pdf" 
+          download="CURRICULO_FRANKLIN_FERREIRA.pdf" 
+          className="px-8 py-3 rounded-xl bg-transparent border border-cardBorder text-white font-medium hover:bg-card hover:border-primary/50 transition-all flex items-center justify-center gap-2"
+        >
+          Baixar Currículo
+          {/* Ícone de Download para ficar com cara de arquivo */}
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+          </svg>
         </a>
       </div>
 

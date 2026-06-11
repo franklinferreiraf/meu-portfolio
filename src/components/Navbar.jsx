@@ -3,7 +3,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b border-cardBorder">
+    <nav className="fixed w-full top-0 z-50 bg-background/60 backdrop-blur-xl border-b border-cardBorder">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 py-4 flex justify-between items-center">
         {/* Logo */}
         <a href="#home" className="text-xl font-bold text-white tracking-wider flex items-center gap-1">
