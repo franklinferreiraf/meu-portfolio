@@ -157,7 +157,7 @@ export const habilidades = [
 export const experiencias = [
   {
     id: 1,
-    ano: "2026 - Presente",
+    ano: "2026",
     cargo: "Desenvolvedor Full Stack",
     empresa: "Projeto Europa Pra VC",
     descricao: "Liderança técnica no desenvolvimento da plataforma EuropaPraVC. Responsável pela arquitetura de ponta a ponta, integração de APIs internacionais e otimização de performance para escalabilidade global."
@@ -193,10 +193,10 @@ export const metricas = [
 
 export const salesforceSkills = [
   { id: 1, nome: "Apex (Classes, Triggers)", nivel: "Avançado" },
-  { id: 2, nome: "Salesforce Flows", nivel: "Especialista" },
-  { id: 3, nome: "LWC (Lightning Web Components)", nivel: "Intermediário" },
+  { id: 2, nome: "Salesforce Flows", nivel: "Avançado" },
+  { id: 3, nome: "LWC (Lightning Web Components)", nivel: "Avançado" },
   { id: 4, nome: "SOQL & SOSL", nivel: "Avançado" },
-  { id: 5, nome: "Process Builder Migration", nivel: "Especialista" },
+  { id: 5, nome: "Process Builder Migration", nivel: "Avançado" },
   { id: 6, nome: "Integrações (REST/SOAP)", nivel: "Avançado" }
 ];
 

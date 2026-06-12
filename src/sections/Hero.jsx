@@ -11,22 +11,13 @@ const Hero = () => {
 
       {/* Lado Esquerdo - Conteúdo */}
       <div className="flex-1 text-left">
-        {/* Badge de Status & Disponibilidade */}
-        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-card border border-cardBorder text-xs font-medium text-gray-300 mb-8 shadow-sm">
-          <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-          </span>
-          Disponível para: <span className="text-white">Estágio, Júnior & Freelancer</span>
-        </div>
-
         {/* Títulos Principais */}
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight leading-tight">
           Desenvolvedor <br />
           <span className="text-gradient">Full Stack</span>
         </h1>
-        <h2 className="text-xl md:text-2xl text-gray-300 font-medium mb-6">
-          Especialista em <span className="text-secondary">React</span>, <span className="text-secondary">Java</span> & <span className="text-secondary">Salesforce</span>
+        <h2 className="text-xl md:text-2xl text-gray-300 font-medium mb-6 tracking-wider">
+          Desenvolvedor <span className="text-secondary">Full Stack Pleno</span> | Java | C# | .NET | JavaScript | React | Salesforce | APIs REST | MySQL
         </h2>
 
         {/* Parágrafo de Apresentação Refinado */}
@@ -61,7 +52,7 @@ const Hero = () => {
           </a>
           
           <a 
-            href="https://github.com/franklinferreir" 
+            href="https://github.com/franklinferreiraf" 
             target="_blank" 
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-xl bg-card border border-cardBorder text-white font-medium hover:border-primary/50 transition-all flex items-center justify-center gap-2 group"
@@ -71,6 +62,18 @@ const Hero = () => {
             </svg>
             GitHub
             <span className="ml-2 px-2 py-0.5 bg-background border border-cardBorder rounded text-[10px] text-gray-400 group-hover:text-white transition-colors">Stats</span>
+          </a>
+
+          <a 
+            href="https://www.linkedin.com/in/franklin-ferreira-09a21a231/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-8 py-3 rounded-xl bg-card border border-cardBorder text-white font-medium hover:border-primary/50 transition-all flex items-center justify-center gap-2"
+          >
+            <svg className="w-5 h-5 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            LinkedIn
           </a>
         </div>
       </div>
@@ -93,7 +96,7 @@ const Hero = () => {
 
           {/* Badge flutuante 1 */}
           <div className="absolute -bottom-4 -left-4 bg-card border border-cardBorder p-4 rounded-2xl shadow-xl animate-float">
-            <div className="text-secondary font-bold text-xl leading-none">2+</div>
+            <div className="text-secondary font-bold text-xl leading-none">3+</div>
             <div className="text-gray-400 text-[10px] uppercase tracking-tighter">Anos Exp.</div>
           </div>
 
