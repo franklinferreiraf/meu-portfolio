@@ -17,7 +17,7 @@ const Hero = () => {
           <span className="text-gradient">Full Stack</span>
         </h1>
         <h2 className="text-xl md:text-2xl text-gray-300 font-medium mb-6 tracking-wider">
-          Desenvolvedor <span className="text-secondary">Full Stack Pleno</span> | Java | C# | .NET | JavaScript | React | Salesforce | APIs REST | MySQL
+          Desenvolvedor <span className="text-secondary">Full Stack</span> | Salesforce Developer | Java | C# | .NET | JavaScript | React | APIs REST | MySQL
         </h2>
 
         {/* Parágrafo de Apresentação Refinado */}
