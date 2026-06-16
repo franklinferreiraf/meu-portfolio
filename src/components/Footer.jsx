@@ -9,8 +9,8 @@ const Footer = () => {
         {/* Logo e Copyright */}
         <div className="flex flex-col items-center md:items-start gap-4 order-2 md:order-1">
           <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-secondary p-1 shadow-lg shadow-primary/10">
-              <img src="/favicon.svg" alt="Logo" className="w-full h-full object-contain brightness-0 invert" />
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-secondary p-2 shadow-lg shadow-primary/10">
+              <img src="/logo-f.svg" alt="Logo" className="w-full h-full object-contain brightness-0 invert" />
             </div>
             <span className="text-lg font-bold text-white tracking-wider">
               Franklin<span className="text-primary">.</span>
