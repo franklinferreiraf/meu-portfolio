@@ -6,10 +6,13 @@ const Navbar = () => {
     <nav className="fixed w-full top-0 z-50 bg-background/60 backdrop-blur-xl border-b border-cardBorder">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 py-4 flex justify-between items-center">
         {/* Logo */}
-        <a href="#home" className="text-xl font-bold text-white tracking-wider flex items-center gap-1">
-          <span className="text-primary">&lt;</span>
-          Franklin
-          <span className="text-primary">/&gt;</span>
+        <a href="#home" className="flex items-center gap-3 group">
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary text-white font-black text-xl shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+            F
+          </div>
+          <span className="text-xl font-bold text-white tracking-wider">
+            Franklin<span className="text-primary">.</span>
+          </span>
         </a>
 
         {/* Links de Navegação (Escondidos em telas muito pequenas) */}
