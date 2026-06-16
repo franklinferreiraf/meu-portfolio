@@ -1,5 +1,6 @@
 import React from 'react';
 import heroImg from '../assets/hero.png';
+import reactLogo from '../assets/react.svg';
 
 const Hero = () => {
   return (
@@ -30,7 +31,7 @@ const Hero = () => {
           <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Stack Principal:</span>
           <div className="flex gap-3">
             <div className="p-2 bg-card border border-cardBorder rounded-lg hover:border-primary/50 transition-colors" title="React">
-              <img src="/src/assets/react.svg" alt="React" className="w-5 h-5" />
+              <img src={reactLogo} alt="React" className="w-5 h-5" />
             </div>
             <div className="p-2 bg-card border border-cardBorder rounded-lg hover:border-primary/50 transition-colors" title="Java">
               <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
