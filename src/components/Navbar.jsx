@@ -7,8 +7,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 py-4 flex justify-between items-center">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3 group">
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary text-white font-black text-xl shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
-            F
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary p-1.5 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300 text-white font-black text-xl">
+            <img src="/favicon.svg" alt="Logo" className="w-full h-full object-contain brightness-0 invert" />
           </div>
           <span className="text-xl font-bold text-white tracking-wider">
             Franklin<span className="text-primary">.</span>
