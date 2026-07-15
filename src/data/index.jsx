@@ -164,21 +164,21 @@ export const experiencias = [
   },
   {
     id: 2,
-    ano: "2026",
+    ano: "2025 - 2026",
     cargo: "Desenvolvedor Frontend",
     empresa: "Grupo Mais Saúde",
     descricao: "Desenvolvimento de interface de alta conversão para clínica médica, priorizando acessibilidade, performance e SEO."
   },
   {
     id: 3,
-    ano: "2025 - 2026",
+    ano: "2024 - 2025",
     cargo: "Desenvolvedor Full Stack",
     empresa: "FFSystem",
     descricao: "Concepção e desenvolvimento de um ecossistema PDV/ERP completo. Implementação de lógica de negócios complexa no backend e interface intuitiva para usuários finais."
   },
   {
     id: 4,
-    ano: "2024 - 2025",
+    ano: "2023 - 2024",
     cargo: "Desenvolvedor de Software Salesforce",
     descricao: "Desenvolvedor focado em automação de processos na plataforma Salesforce. Desenvolvimento de soluções robustas com Apex e Flows, focando em redução de churn e eficiência operacional."
   }
@@ -188,7 +188,7 @@ export const metricas = [
   { id: 1, valor: "10+", label: "Projetos Publicados" },
   { id: 2, valor: "15+", label: "Tecnologias Utilizadas" },
   { id: 3, valor: "20+", label: "Salesforce Flows" },
-  { id: 4, valor: "100+", label: "Commits GitHub" }
+  { id: 4, valor: "5+", label: "Projetos em Produção" }
 ];
 
 export const salesforceSkills = [
