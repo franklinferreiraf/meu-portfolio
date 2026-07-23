@@ -27,9 +27,11 @@ const Projetos = () => {
             {/* Capa do Projeto */}
             <div className="h-56 w-full bg-gradient-to-br from-[#12121a] to-[#0a0a0f] flex items-center justify-center relative overflow-hidden border-b border-cardBorder/50">
               {projeto.imagem ? (
-                <img 
-                  src={projeto.imagem} 
-                  alt={`Capa do projeto ${projeto.titulo}`} 
+                <img
+                  src={projeto.imagem}
+                  alt={`Capa do projeto ${projeto.titulo}`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               ) : (
