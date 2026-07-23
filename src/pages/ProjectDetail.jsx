@@ -43,7 +43,7 @@ const ProjectDetail = () => {
 
         {/* Imagem Principal */}
         <div className="rounded-3xl overflow-hidden border border-cardBorder mb-12 shadow-2xl">
-          <img src={projeto.imagem} alt={projeto.titulo} className="w-full h-auto" />
+          <img src={projeto.imagem} alt={`Captura de tela do projeto ${projeto.titulo}`} loading="lazy" decoding="async" className="w-full h-auto" />
         </div>
 
         {/* Grid de Informações */}
