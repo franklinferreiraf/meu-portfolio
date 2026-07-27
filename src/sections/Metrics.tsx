@@ -1,9 +1,8 @@
-import React from 'react';
 import { metricas } from '../data';
 
 const Metrics = () => {
   return (
-    <section className="py-12 border-t border-cardBorder/50 bg-background/50">
+    <section aria-label="Estatísticas" className="py-12 border-t border-cardBorder/50 bg-background/50">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {metricas.map((metrica) => (
           <div key={metrica.id} className="text-center">
