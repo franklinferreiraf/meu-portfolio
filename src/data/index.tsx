@@ -278,7 +278,7 @@ export const experiencias: Experiencia[] = [
 ];
 
 export const metricas: Metrica[] = [
-  { id: 1, valor: '3+', label: 'Anos desenvolvendo software' },
+  { id: 1, valor: '4+', label: 'Anos desenvolvendo software' },
   { id: 2, valor: '10+', label: 'Projetos desenvolvidos' },
   { id: 3, valor: '20+', label: 'Automações Salesforce' },
   { id: 4, valor: '5+', label: 'Projetos Full Stack' },
