@@ -34,7 +34,8 @@
     "badgesLabel": "Main technologies",
     "viewProjects": "View Projects",
     "downloadCv": "Download Resume",
-    "downloadCvAria": "Download Franklin Ferreira's resume (PDF)",
+    "cvFile": "RESUME - FRANKLIN FERREIRA DOS SANTOS.pdf",
+    "downloadCvAria": "Download Franklin Ferreira's resume in English (PDF)",
     "codeCardLabel": "Code card summarizing Franklin Ferreira's stack: Java, .NET, React, Angular, Azure and AWS",
     "codeComment": "Open to new opportunities",
     "yearsBadge": "Years Exp."

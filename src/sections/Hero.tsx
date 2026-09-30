@@ -1,10 +1,11 @@
-import { curriculoArquivo, curriculoUrl } from '../data';
 import { useLanguage } from '../i18n/useLanguage';
 import { useContent } from '../i18n/useContent';
 
 const Hero = () => {
   const { t } = useLanguage();
   const { heroBadges } = useContent();
+  // PDF do currículo no idioma atual, servido a partir de /public (o nome tem espaços, por isso o encodeURI).
+  const curriculoUrl = encodeURI(`/${t.hero.cvFile}`);
 
   return (
     <section
@@ -56,7 +57,7 @@ const Hero = () => {
 
           <a
             href={curriculoUrl}
-            download={curriculoArquivo}
+            download={t.hero.cvFile}
             aria-label={t.hero.downloadCvAria}
             className="px-8 py-3 rounded-xl bg-card border border-primary/50 text-white font-bold hover:bg-primary/10 hover:border-primary transition-all flex items-center justify-center gap-2 group"
           >
