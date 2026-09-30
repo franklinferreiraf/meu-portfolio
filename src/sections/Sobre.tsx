@@ -1,30 +1,26 @@
-import { sobreCards } from '../data';
+import Highlight from '../components/Highlight';
+import { useLanguage } from '../i18n/useLanguage';
+import { useContent } from '../i18n/useContent';
 
 const Sobre = () => {
+  const { t } = useLanguage();
+  const { sobreCards } = useContent();
+
   return (
     <section id="sobre" aria-labelledby="sobre-title" className="py-20 border-t border-cardBorder/50">
       <div className="flex flex-col gap-12">
         {/* Textos */}
         <div className="w-full text-left">
           <h2 id="sobre-title" className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Sobre <span className="text-gradient">Mim</span>
+            <Highlight text={t.about.title} />
           </h2>
           <div className="max-w-3xl space-y-6">
-            <p className="text-white font-medium leading-relaxed text-lg md:text-xl">
-              Desenvolvedor Full Stack com experiência na criação de aplicações web utilizando React, Java, Spring Boot,
-              C#/.NET e Salesforce.
-            </p>
-            <p className="text-muted leading-relaxed text-base md:text-lg">
-              Atuo no desenvolvimento de APIs REST, integração entre sistemas, interfaces responsivas, automação de
-              processos e manutenção de aplicações corporativas.
-            </p>
-            <p className="text-muted leading-relaxed text-base md:text-lg">
-              Tenho experiência com arquitetura em camadas, bancos de dados relacionais, Git, Docker e desenvolvimento de
-              soluções escaláveis, sempre focando em performance, qualidade e boas práticas.
-            </p>
-            <p className="text-muted leading-relaxed text-base md:text-lg">
-              Atualmente curso Sistemas de Informação pela UNEX, com conclusão prevista para 2026.
-            </p>
+            <p className="text-white font-medium leading-relaxed text-lg md:text-xl">{t.about.lead}</p>
+            {t.about.paragraphs.map((paragrafo) => (
+              <p key={paragrafo} className="text-muted leading-relaxed text-base md:text-lg">
+                {paragrafo}
+              </p>
+            ))}
           </div>
         </div>
 

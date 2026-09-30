@@ -1,0 +1,308 @@
+{
+  "meta": {
+    "htmlLang": "pt-BR",
+    "ogLocale": "pt_BR",
+    "homeTitle": "Franklin Ferreira | Desenvolvedor Full Stack — Java, .NET, React, Angular",
+    "homeDescription": "Desenvolvedor Full Stack com 5+ anos e experiência internacional. Java, Spring Boot, C#/.NET, React e Angular: APIs REST, microsserviços, integrações e cloud.",
+    "projectTitle": "{titulo} — Estudo de Caso | Franklin Ferreira",
+    "notFoundTitle": "Projeto não encontrado | Franklin Ferreira"
+  },
+  "common": {
+    "loading": "Carregando…"
+  },
+  "nav": {
+    "homeAria": "Franklin Ferreira — início",
+    "links": {
+      "sobre": "Sobre",
+      "projetos": "Projetos",
+      "habilidades": "Habilidades",
+      "experiencia": "Experiência",
+      "contato": "Contato"
+    },
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "languageLabel": "Idioma do site",
+    "languageNames": {
+      "pt": "Português",
+      "en": "English"
+    }
+  },
+  "hero": {
+    "titleLine1": "Desenvolvedor",
+    "titleLine2": "Full Stack",
+    "intro": "Desenvolvedor Full Stack com experiência no desenvolvimento de aplicações web, APIs REST, integrações entre sistemas e automação de processos. Atuação com React, Java, Spring Boot, C#/.NET e Salesforce, criando soluções escaláveis, performáticas e alinhadas às melhores práticas de desenvolvimento.",
+    "badgesLabel": "Principais tecnologias",
+    "viewProjects": "Ver Projetos",
+    "downloadCv": "Baixar Currículo",
+    "downloadCvAria": "Baixar currículo de Franklin Ferreira em PDF",
+    "codeCardLabel": "Card de código resumindo a stack de Franklin Ferreira: Java, .NET, React, Angular, Azure e AWS",
+    "codeComment": "Aberto a novas oportunidades",
+    "yearsBadge": "Anos Exp."
+  },
+  "metrics": {
+    "ariaLabel": "Estatísticas",
+    "items": {
+      "1": "Anos desenvolvendo software",
+      "2": "Projetos desenvolvidos",
+      "3": "Integrações & APIs REST",
+      "4": "Projetos Full Stack"
+    }
+  },
+  "about": {
+    "title": "Sobre {Mim}",
+    "lead": "Desenvolvedor Full Stack com atuação em projetos internacionais, transitando com naturalidade entre back-end e front-end com C#/.NET, Java, Spring Boot, React, Next.js e Angular.",
+    "paragraphs": [
+      "Atualmente desenvolvo soluções para um cliente arquiteto em Madrid (Espanha) e já participei de projetos com empresas como Zühlke, BASF e SoftwareOne — construindo desde Design Systems e micro frontends até microsserviços e APIs RESTful baseadas em SOLID e Clean Architecture.",
+      "Tenho experiência sólida com integrações complexas: mensageria com Kafka e RabbitMQ, webhooks de pagamento (Stripe, Pagar.me), MuleSoft, Dynamics CRM e Salesforce, além de cloud com Azure, AWS, Kubernetes e OpenShift — sempre focando em performance, qualidade e boas práticas.",
+      "Atualmente curso Sistemas de Informação pela UNEX, com conclusão prevista para 2026."
+    ],
+    "cards": {
+      "1": {
+        "titulo": "Arquitetura & Código Limpo",
+        "descricao": "Desenvolvimento de sistemas escaláveis e de fácil manutenção, com arquitetura em camadas e as melhores práticas de mercado."
+      },
+      "2": {
+        "titulo": "Performance & Otimização",
+        "descricao": "Foco em aplicações performáticas, com carregamento rápido, otimização de recursos e Core Web Vitals saudáveis."
+      },
+      "3": {
+        "titulo": "Soluções de Ponta a Ponta",
+        "descricao": "Atuação em todo o ciclo de vida do produto — do front-end às APIs REST, integrações e automação de processos."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos em {Destaque}",
+    "subtitle": "Uma seleção de projetos que demonstram minha atuação Full Stack — do front-end às APIs, integrações e automação.",
+    "coverAlt": "Capa do projeto {titulo}",
+    "viewDetails": "Ver Detalhes Técnicos",
+    "viewDetailsAria": "Ver detalhes técnicos do projeto {titulo}",
+    "features": "Funcionalidades",
+    "caseStudy": "Estudo de Caso",
+    "codeAria": "Ver código do projeto {titulo} no GitHub",
+    "demo": "Demo",
+    "demoAria": "Abrir demo do projeto {titulo}",
+    "items": {
+      "ffsystem": {
+        "descricao": "Sistema ERP/PDV completo para gestão comercial.",
+        "descricaoLonga": "O FFSystem é um ecossistema ERP/PDV completo focado em automação comercial e gestão eficiente para pequenos e médios comércios. Reúne controle de estoque, vendas, clientes e financeiro em uma interface intuitiva com um backend robusto em Spring Boot e APIs REST autenticadas por JWT.",
+        "problema": "Comércios locais sofriam com a falta de controle centralizado de estoque e vendas, utilizando métodos manuais propensos a erros e perda de dados financeiros.",
+        "solucao": "Desenvolvi uma plataforma integrada que automatiza o fluxo de caixa, controla o inventário em tempo real e gera relatórios analíticos para tomada de decisão.",
+        "funcionalidades": ["Controle de estoque", "Gestão de clientes", "Financeiro", "Vendas", "Dashboard", "APIs REST", "Autenticação JWT"],
+        "desafios": "Sincronização de estoque em tempo real e geração de relatórios complexos com alta performance.",
+        "aprendizados": "Aprofundamento em arquitetura Spring Boot, autenticação JWT e padrões de design para sistemas de gestão.",
+        "resultados": "Redução estimada de 30% no tempo gasto em tarefas administrativas pelos usuários.",
+        "arquitetura": "Arquitetura em camadas com Front-end em React, Back-end em Java Spring Boot expondo APIs REST e banco de dados relacional PostgreSQL.",
+        "metricas": {
+          "tempo": "de redução no tempo de tarefas administrativas",
+          "usuarios": "usuários ativos",
+          "api": "tempo médio de resposta das APIs"
+        }
+      },
+      "europa-pra-vc": {
+        "descricao": "Plataforma internacional para serviços de imigração e comércio internacional.",
+        "descricaoLonga": "Plataforma internacional voltada a serviços relacionados à imigração e ao comércio internacional, com marketplace, painel administrativo e integração entre múltiplas APIs. Construída sobre uma arquitetura escalável com back-end em .NET e front-end em React.",
+        "problema": "A complexidade de serviços de imigração e comércio internacional exigia uma plataforma única, escalável e integrada a diferentes serviços externos.",
+        "solucao": "Uma plataforma completa com marketplace, sistema de pedidos, gestão de usuários e integração de APIs, sustentada por uma arquitetura escalável.",
+        "funcionalidades": ["Integração de APIs", "Marketplace", "Painel administrativo", "Sistema de pedidos", "Gestão de usuários", "Arquitetura escalável"],
+        "desafios": "Gestão de estado complexo e integração confiável com múltiplos provedores de serviços externos.",
+        "aprendizados": "Experiência prática com integração de APIs de terceiros e desenho de arquiteturas escaláveis em .NET.",
+        "resultados": "Expansão da base de usuários e estabilidade operacional em escala internacional.",
+        "arquitetura": "Back-end em .NET com arquitetura limpa expondo APIs REST, front-end em React e banco de dados PostgreSQL.",
+        "metricas": {
+          "usuarios": "usuários cadastrados",
+          "integracoes": "APIs externas integradas",
+          "pedidos": "pedidos processados por mês"
+        }
+      },
+      "grupo-mais-saude": {
+        "descricao": "Portal institucional para clínica médica.",
+        "descricaoLonga": "Portal institucional para clínica médica, com foco em interface responsiva, SEO, performance e componentes reutilizáveis para facilitar o acesso do paciente às informações de saúde.",
+        "problema": "Pacientes tinham dificuldade em encontrar informações sobre especialidades e serviços da clínica de forma rápida e acessível.",
+        "solucao": "Interface institucional intuitiva, responsiva e otimizada para SEO e performance, com componentes reutilizáveis.",
+        "funcionalidades": ["Interface responsiva", "SEO", "Otimização de performance", "Componentes reutilizáveis"],
+        "desafios": "Garantir acessibilidade e ótima performance web (Core Web Vitals) em um portal rico em conteúdo.",
+        "aprendizados": "Foco intensivo em SEO técnico, performance e reuso de componentes.",
+        "resultados": "Melhoria no tempo de permanência e na experiência de navegação dos pacientes.",
+        "arquitetura": "Front-end modularizado em React com foco em reuso de componentes, SEO e performance.",
+        "metricas": {
+          "lighthouse": "de score de performance no Lighthouse",
+          "permanencia": "de aumento no tempo de permanência",
+          "visitas": "visitas mensais"
+        }
+      },
+      "marianne-soares-nutri": {
+        "descricao": "Site institucional para nutricionista clínica e funcional.",
+        "descricaoLonga": "Site institucional da nutricionista Marianne Soares Machado, em Feira de Santana (BA). Apresenta áreas de atuação, o programa Reset Metabólico™, como funciona a consulta, avaliações e FAQ, com agendamento direto pelo WhatsApp para atendimento presencial e on-line.",
+        "problema": "A profissional precisava de uma presença digital própria que transmitisse credibilidade, fosse encontrada nas buscas locais e convertesse visitantes em agendamentos.",
+        "solucao": "Site leve e responsivo com SEO local, dados estruturados para o Google e chamadas de ação que abrem o WhatsApp com mensagens pré-definidas para cada tipo de atendimento.",
+        "funcionalidades": ["Agendamento via WhatsApp", "SEO local", "Dados estruturados (JSON-LD)", "Open Graph", "Imagens responsivas", "FAQ", "Responsividade"],
+        "desafios": "Alcançar carregamento rápido com fotos em destaque e boa visibilidade nas buscas locais sem depender de framework.",
+        "aprendizados": "SEO técnico para negócios locais (schema.org, Open Graph) e otimização de imagens com srcset e preload.",
+        "resultados": "Canal próprio de captação de pacientes, com agendamentos direcionados ao WhatsApp.",
+        "arquitetura": "Site estático em HTML, CSS e JavaScript puro, com imagens WebP responsivas, fontes otimizadas e hospedagem na Vercel.",
+        "metricas": {
+          "lighthouse": "de score de performance no Lighthouse",
+          "agendamentos": "agendamentos por mês via WhatsApp",
+          "visitas": "visitas mensais"
+        }
+      }
+    }
+  },
+  "projectDetail": {
+    "back": "Voltar",
+    "notFound": "Projeto não encontrado",
+    "backHome": "Voltar para a Home",
+    "screenshotAlt": "Captura de tela do projeto {titulo}",
+    "resultsTitle": "Resultados em Números",
+    "features": "Principais Funcionalidades",
+    "problem": "O Problema",
+    "solution": "A Solução",
+    "challenges": "Desafios",
+    "learnings": "Aprendizados",
+    "architecture": "Arquitetura",
+    "technologies": "Tecnologias",
+    "result": "Resultado",
+    "accessDemo": "Acessar Demo",
+    "viewCode": "Ver Código no GitHub"
+  },
+  "skills": {
+    "title": "Habilidades {Técnicas}",
+    "subtitle": "Tecnologias e ferramentas que utilizo no dia a dia para construir aplicações completas e eficientes.",
+    "categories": {
+      "1": "Front-end",
+      "2": "Back-end",
+      "3": "Banco de Dados",
+      "4": "Cloud",
+      "5": "Mensageria & Integrações",
+      "6": "Arquitetura & Qualidade",
+      "7": "Salesforce"
+    }
+  },
+  "experience": {
+    "title": "Experiência {Profissional}",
+    "subtitle": "Trajetória profissional e as principais atividades que moldaram minha experiência como desenvolvedor.",
+    "items": {
+      "1": {
+        "cargo": "Desenvolvedor Full Stack",
+        "empresa": "Consultoria Internacional — Cliente: Arquiteto (Madrid/ES)",
+        "atividades": [
+          "Full Stack para clientes internacionais",
+          "C# / .NET",
+          "Java",
+          "React",
+          "Next.js",
+          "Angular",
+          "Design System do zero (Sass / styled-components)",
+          "Micro frontends",
+          "Microsserviços",
+          "Webhooks (Stripe, Pagar.me)",
+          "Kafka",
+          "RabbitMQ",
+          "APIs RESTful com SOLID e Clean Architecture",
+          "Dynamics CRM (Plugins, Actions, Web API, QueryExpression)",
+          "MuleSoft",
+          "Azure Functions",
+          "Azure Storage",
+          "Application Insights",
+          "Kubernetes",
+          "OpenShift",
+          "AWS CloudFront / EKS",
+          "CI/CD com GitLab CI",
+          "Elixir",
+          "GitHub Copilot"
+        ]
+      },
+      "2": {
+        "cargo": "Desenvolvedor de Soluções Internas",
+        "empresa": "Nunes Invest",
+        "atividades": [
+          "Java / Spring Boot (Data, Security, MVC)",
+          "C# / .NET",
+          "Dynamics CRM",
+          "Azure Functions",
+          "Oracle",
+          "SQL Server",
+          "Redis",
+          "Kafka / RabbitMQ",
+          "WildFly",
+          "Java EE",
+          "jCompany / Jaguar",
+          "BPMN",
+          "Produtos de concessão de crédito",
+          "PHP",
+          "Angular",
+          "JWT",
+          "Testes unitários e de integração",
+          "Maven"
+        ]
+      },
+      "3": {
+        "cargo": "Desenvolvedor de Software",
+        "empresa": "Diversos Projetos (Salesforce e Freelancer)",
+        "atividades": [
+          "Aplicações web",
+          "React",
+          "Java",
+          "Spring Boot",
+          "C# / .NET",
+          "Salesforce Apex",
+          "LWC",
+          "Flows",
+          "SOQL",
+          "Migração de Process Builder"
+        ]
+      }
+    }
+  },
+  "competencies": {
+    "title": "Compet{ências}",
+    "subtitle": "Principais tecnologias, ferramentas e metodologias que domino e aplico no dia a dia."
+  },
+  "education": {
+    "title": "Formação & {Idiomas}",
+    "subtitle": "Formação acadêmica e proficiência em idiomas.",
+    "academic": "Formação Acadêmica",
+    "languages": "Idiomas",
+    "items": {
+      "1": {
+        "curso": "Bacharelado em Sistemas de Informação",
+        "periodo": "2023 – 2026 (Previsão)"
+      }
+    },
+    "languageItems": {
+      "1": { "idioma": "Português", "nivel": "Nativo" },
+      "2": { "idioma": "Inglês", "nivel": "Intermediário" }
+    }
+  },
+  "certifications": {
+    "title": "Certificações & {Cursos}",
+    "subtitle": "Investimento constante em aprendizado e validação técnica das minhas competências.",
+    "items": {
+      "1": { "nome": "Salesforce Associate", "emissor": "Salesforce" },
+      "2": { "nome": "Salesforce Platform Developer I (Estudo)", "emissor": "Salesforce" },
+      "3": { "nome": "Java Programming", "emissor": "Oracle / Alura" },
+      "4": { "nome": "Desenvolvimento Web Full Stack", "emissor": "DNC" },
+      "5": { "nome": "React Advanced", "emissor": "Rocketseat" },
+      "6": { "nome": "Espaço para futuras certificações", "emissor": "Em constante evolução" }
+    }
+  },
+  "contact": {
+    "title": "Vamos construir algo {incrível?}",
+    "subtitle": "Estou disponível para oportunidades como Desenvolvedor Full Stack.",
+    "availabilityLabel": "Modelos de trabalho disponíveis",
+    "availability": ["Remoto", "Híbrido", "Presencial"],
+    "name": "Seu nome",
+    "email": "Seu e-mail",
+    "message": "Sua mensagem",
+    "submit": "Enviar E-mail",
+    "or": "OU",
+    "whatsappMessage": "Olá, vi o seu portfólio e gostaria de conversar!"
+  },
+  "footer": {
+    "backToTop": "Voltar ao topo",
+    "rights": "Todos os direitos reservados.",
+    "home": "Início"
+  },
+  "terms": {}
+}

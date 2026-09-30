@@ -1,15 +1,18 @@
-import { certificacoes } from '../data';
+import Highlight from '../components/Highlight';
+import { useLanguage } from '../i18n/useLanguage';
+import { useContent } from '../i18n/useContent';
 
 const Certificacoes = () => {
+  const { t } = useLanguage();
+  const { certificacoes } = useContent();
+
   return (
     <section id="certificacoes" aria-labelledby="certificacoes-title" className="py-20 border-t border-cardBorder/50">
       <div className="mb-12">
         <h2 id="certificacoes-title" className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Certificações & <span className="text-gradient">Cursos</span>
+          <Highlight text={t.certifications.title} />
         </h2>
-        <p className="text-muted text-base md:text-lg max-w-2xl">
-          Investimento constante em aprendizado e validação técnica das minhas competências.
-        </p>
+        <p className="text-muted text-base md:text-lg max-w-2xl">{t.certifications.subtitle}</p>
       </div>
 
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
