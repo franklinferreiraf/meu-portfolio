@@ -1,4 +1,4 @@
-import { curriculoUrl } from '../data';
+import { curriculoArquivo, curriculoUrl } from '../data';
 import { useLanguage } from '../i18n/useLanguage';
 import { useContent } from '../i18n/useContent';
 
@@ -56,7 +56,7 @@ const Hero = () => {
 
           <a
             href={curriculoUrl}
-            download="Curriculo_Franklin_Ferreira_Geral.pdf"
+            download={curriculoArquivo}
             aria-label={t.hero.downloadCvAria}
             className="px-8 py-3 rounded-xl bg-card border border-primary/50 text-white font-bold hover:bg-primary/10 hover:border-primary transition-all flex items-center justify-center gap-2 group"
           >
