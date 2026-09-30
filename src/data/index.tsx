@@ -16,9 +16,6 @@ import type {
 /** Usuário do GitHub — usado nos widgets públicos de estatísticas. */
 export const githubUsername = 'franklinferreiraf';
 
-/** Arquivo do currículo servido a partir de /public (o nome tem espaços, por isso o encodeURI no link). */
-export const curriculoArquivo = 'CURRICULO - FRANKLIN FERREIRA DOS SANTOS.pdf';
-export const curriculoUrl = encodeURI(`/${curriculoArquivo}`);
 
 /** Badges de stack exibidos logo abaixo da descrição do Hero. */
 export const heroBadges: string[] = [
