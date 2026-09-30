@@ -1,15 +1,18 @@
-import { competencias } from '../data';
+import Highlight from '../components/Highlight';
+import { useLanguage } from '../i18n/useLanguage';
+import { useContent } from '../i18n/useContent';
 
 const Competencias = () => {
+  const { t } = useLanguage();
+  const { competencias } = useContent();
+
   return (
     <section id="competencias" aria-labelledby="competencias-title" className="py-20 border-t border-cardBorder/50">
       <div className="mb-12">
         <h2 id="competencias-title" className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Compet<span className="text-gradient">ências</span>
+          <Highlight text={t.competencies.title} />
         </h2>
-        <p className="text-muted text-base md:text-lg max-w-2xl">
-          Principais tecnologias, ferramentas e metodologias que domino e aplico no dia a dia.
-        </p>
+        <p className="text-muted text-base md:text-lg max-w-2xl">{t.competencies.subtitle}</p>
       </div>
 
       <ul className="flex flex-wrap gap-3">

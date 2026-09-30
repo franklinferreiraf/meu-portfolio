@@ -1,8 +1,12 @@
-import { metricas } from '../data';
+import { useLanguage } from '../i18n/useLanguage';
+import { useContent } from '../i18n/useContent';
 
 const Metrics = () => {
+  const { t } = useLanguage();
+  const { metricas } = useContent();
+
   return (
-    <section aria-label="Estatísticas" className="py-12 border-t border-cardBorder/50 bg-background/50">
+    <section aria-label={t.metrics.ariaLabel} className="py-12 border-t border-cardBorder/50 bg-background/50">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {metricas.map((metrica) => (
           <div key={metrica.id} className="text-center">

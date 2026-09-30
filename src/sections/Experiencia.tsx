@@ -1,16 +1,19 @@
-import { experiencias } from '../data';
+import Highlight from '../components/Highlight';
+import { useLanguage } from '../i18n/useLanguage';
+import { useContent } from '../i18n/useContent';
 
 const Experiencia = () => {
+  const { t } = useLanguage();
+  const { experiencias } = useContent();
+
   return (
     <section id="experiencia" aria-labelledby="experiencia-title" className="py-20 border-t border-cardBorder/50">
       {/* Cabeçalho */}
       <div className="mb-16">
         <h2 id="experiencia-title" className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Experiência <span className="text-gradient">Profissional</span>
+          <Highlight text={t.experience.title} />
         </h2>
-        <p className="text-muted text-base md:text-lg max-w-2xl">
-          Trajetória profissional e as principais atividades que moldaram minha experiência como desenvolvedor.
-        </p>
+        <p className="text-muted text-base md:text-lg max-w-2xl">{t.experience.subtitle}</p>
       </div>
 
       {/* Contentor da Linha do Tempo */}

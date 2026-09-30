@@ -1,18 +1,20 @@
-const disponibilidade = ['Remoto', 'Híbrido', 'Presencial'];
+import Highlight from '../components/Highlight';
+import { useLanguage } from '../i18n/useLanguage';
 
 const Contato = () => {
+  const { t } = useLanguage();
+  const whatsappUrl = `https://wa.me/5575991964091?text=${encodeURIComponent(t.contact.whatsappMessage)}`;
+
   return (
     <section id="contato" aria-labelledby="contato-title" className="py-20 border-t border-cardBorder/50 flex flex-col items-center">
       {/* Cabeçalho */}
       <div className="text-center mb-8 w-full max-w-2xl">
         <h2 id="contato-title" className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Vamos construir algo <span className="text-gradient">incrível?</span>
+          <Highlight text={t.contact.title} />
         </h2>
-        <p className="text-muted text-base md:text-lg mb-6">
-          Estou disponível para oportunidades como Desenvolvedor Full Stack.
-        </p>
-        <ul className="flex flex-wrap justify-center gap-3" aria-label="Modelos de trabalho disponíveis">
-          {disponibilidade.map((modelo) => (
+        <p className="text-muted text-base md:text-lg mb-6">{t.contact.subtitle}</p>
+        <ul className="flex flex-wrap justify-center gap-3" aria-label={t.contact.availabilityLabel}>
+          {t.contact.availability.map((modelo) => (
             <li
               key={modelo}
               className="flex items-center gap-2 px-4 py-1.5 text-sm font-medium text-secondary bg-secondary/10 border border-secondary/20 rounded-full"
@@ -29,35 +31,35 @@ const Contato = () => {
         {/* Formulário conectado ao Formspree */}
         <form action="https://formspree.io/f/xeervrjl" method="POST" className="flex flex-col gap-4">
           <label className="sr-only" htmlFor="nome">
-            Seu nome
+            {t.contact.name}
           </label>
           <input
             id="nome"
             type="text"
             name="nome"
             required
-            placeholder="Seu nome"
+            placeholder={t.contact.name}
             className="w-full bg-card border border-cardBorder rounded-xl px-5 py-3 text-white placeholder:text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all"
           />
           <label className="sr-only" htmlFor="email">
-            Seu e-mail
+            {t.contact.email}
           </label>
           <input
             id="email"
             type="email"
             name="email"
             required
-            placeholder="Seu e-mail"
+            placeholder={t.contact.email}
             className="w-full bg-card border border-cardBorder rounded-xl px-5 py-3 text-white placeholder:text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all"
           />
           <label className="sr-only" htmlFor="mensagem">
-            Sua mensagem
+            {t.contact.message}
           </label>
           <textarea
             id="mensagem"
             name="mensagem"
             required
-            placeholder="Sua mensagem"
+            placeholder={t.contact.message}
             rows={4}
             className="w-full bg-card border border-cardBorder rounded-xl px-5 py-3 text-white placeholder:text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all resize-none"
           ></textarea>
@@ -69,21 +71,21 @@ const Contato = () => {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
             </svg>
-            Enviar E-mail
+            {t.contact.submit}
           </button>
         </form>
 
         {/* Separador Visual */}
         <div className="flex items-center gap-4 text-muted text-sm w-full">
           <div className="flex-1 h-px bg-cardBorder" aria-hidden="true"></div>
-          <span>OU</span>
+          <span>{t.contact.or}</span>
           <div className="flex-1 h-px bg-cardBorder" aria-hidden="true"></div>
         </div>
 
         {/* Botões de contato rápido */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <a
-            href="https://wa.me/5575991964091?text=Olá,%20vi%20o%20seu%20portfólio%20e%20gostaria%20de%20conversar!"
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#25D366]/10 border border-[#25D366]/30 hover:border-[#25D366] text-white font-medium py-3 rounded-xl transition-all flex items-center justify-center gap-2 group"

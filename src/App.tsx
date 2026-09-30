@@ -12,11 +12,16 @@ import Formacao from './sections/Formacao';
 import Certificacoes from './sections/Certificacoes';
 import Contato from './sections/Contato';
 import Footer from './components/Footer';
+import { useLanguage } from './i18n/useLanguage';
+import { useDocumentMeta } from './i18n/useDocumentMeta';
 
 // Code splitting: a página de detalhe do projeto só é carregada quando acessada.
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
 
 function HomePage() {
+  const { t } = useLanguage();
+  useDocumentMeta(t.meta.homeTitle, t.meta.homeDescription, t.meta.ogLocale);
+
   return (
     <>
       <Hero />
@@ -34,10 +39,12 @@ function HomePage() {
 }
 
 function RouteFallback() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-[60vh] flex items-center justify-center" role="status" aria-live="polite">
       <div className="w-10 h-10 border-2 border-cardBorder border-t-primary rounded-full animate-spin" aria-hidden="true"></div>
-      <span className="sr-only">Carregando…</span>
+      <span className="sr-only">{t.common.loading}</span>
     </div>
   );
 }

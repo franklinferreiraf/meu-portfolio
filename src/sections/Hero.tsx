@@ -1,23 +1,27 @@
-import heroImg from '../assets/hero.png';
-import { heroBadges } from '../data';
+import { curriculoUrl } from '../data';
+import { useLanguage } from '../i18n/useLanguage';
+import { useContent } from '../i18n/useContent';
 
 const Hero = () => {
+  const { t } = useLanguage();
+  const { heroBadges } = useContent();
+
   return (
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="pt-32 pb-20 md:pt-40 md:pb-32 flex flex-col md:flex-row items-center gap-12 min-h-[90vh] relative overflow-hidden"
+      className="pt-32 pb-20 md:pt-40 md:pb-32 flex flex-col lg:flex-row items-center gap-12 min-h-[90vh] relative overflow-hidden"
     >
       {/* Background Glows */}
       <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/20 rounded-full blur-[120px] -z-10" aria-hidden="true"></div>
       <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-secondary/20 rounded-full blur-[120px] -z-10" aria-hidden="true"></div>
 
       {/* Lado Esquerdo - Conteúdo */}
-      <div className="flex-1 text-left">
+      <div className="w-full lg:flex-1 min-w-0 text-left">
         {/* Títulos Principais */}
-        <h1 id="hero-title" className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight leading-tight">
-          Desenvolvedor <br />
-          <span className="text-gradient">Full Stack</span>
+        <h1 id="hero-title" className="text-4xl min-[400px]:text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight leading-tight">
+          {t.hero.titleLine1} <br />
+          <span className="text-gradient">{t.hero.titleLine2}</span>
         </h1>
         <p className="text-lg md:text-2xl text-gray-300 font-medium mb-6 tracking-wide">
           Java <span className="text-secondary">•</span> Spring Boot <span className="text-secondary">•</span> React{' '}
@@ -26,13 +30,11 @@ const Hero = () => {
 
         {/* Parágrafo de Apresentação */}
         <p className="max-w-2xl text-muted text-base md:text-lg mb-8 leading-relaxed">
-          Desenvolvedor Full Stack com experiência no desenvolvimento de aplicações web, APIs REST, integrações entre
-          sistemas e automação de processos. Atuação com React, Java, Spring Boot, C#/.NET e Salesforce, criando soluções
-          escaláveis, performáticas e alinhadas às melhores práticas de desenvolvimento.
+          {t.hero.intro}
         </p>
 
         {/* Badges de Stack */}
-        <ul className="flex flex-wrap gap-2.5 mb-10 pb-10 border-b border-cardBorder/50" aria-label="Principais tecnologias">
+        <ul className="flex flex-wrap gap-2.5 mb-10 pb-10 border-b border-cardBorder/50" aria-label={t.hero.badgesLabel}>
           {heroBadges.map((badge) => (
             <li
               key={badge}
@@ -44,12 +46,24 @@ const Hero = () => {
         </ul>
 
         {/* Botões de Ação */}
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full sm:max-w-lg">
           <a
             href="#projetos"
             className="px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary/80 transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
           >
-            Ver Projetos
+            {t.hero.viewProjects}
+          </a>
+
+          <a
+            href={curriculoUrl}
+            download="Curriculo_Franklin_Ferreira_Geral.pdf"
+            aria-label={t.hero.downloadCvAria}
+            className="px-8 py-3 rounded-xl bg-card border border-primary/50 text-white font-bold hover:bg-primary/10 hover:border-primary transition-all flex items-center justify-center gap-2 group"
+          >
+            <svg className="w-5 h-5 text-secondary group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            {t.hero.downloadCv}
           </a>
 
           <a
@@ -78,34 +92,58 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Lado Direito - Foto Profissional */}
-      <div className="flex-1 flex justify-center md:justify-end relative">
-        <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+      {/* Lado Direito - Card de Código */}
+      {/* Abaixo do lg o card acompanha a largura do conteúdo (alinhado à esquerda) e os selos flutuantes somem */}
+      <div className="w-full lg:w-auto lg:flex-1 flex justify-start lg:justify-end lg:pr-6 relative">
+        <div className="relative w-full max-w-lg lg:w-96 lg:h-96">
           {/* Círculo de fundo decorativo */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-3xl rotate-6 opacity-20 -z-10" aria-hidden="true"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-3xl rotate-2 lg:rotate-6 opacity-20 -z-10" aria-hidden="true"></div>
           <div className="absolute inset-0 bg-card border border-cardBorder rounded-3xl -z-5" aria-hidden="true"></div>
 
-          {/* Imagem do Franklin */}
-          <div className="w-full h-full rounded-3xl overflow-hidden border border-cardBorder shadow-2xl">
-            <img
-              src={heroImg}
-              alt="Franklin Ferreira, Desenvolvedor Full Stack"
-              width={384}
-              height={384}
-              fetchPriority="high"
-              decoding="async"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
-            />
-          </div>
+          {/* Card de Código */}
+          <figure
+            aria-label={t.hero.codeCardLabel}
+            className="w-full lg:h-full rounded-3xl overflow-hidden border border-cardBorder shadow-2xl bg-card flex flex-col"
+          >
+            {/* Barra da "janela" do editor */}
+            <div className="flex items-center gap-2 px-5 py-3 lg:py-4 border-b border-cardBorder/60" aria-hidden="true">
+              <span className="w-3 h-3 rounded-full bg-primary"></span>
+              <span className="w-3 h-3 rounded-full bg-secondary"></span>
+              <span className="w-3 h-3 rounded-full bg-accent"></span>
+              <span className="ml-3 text-xs font-medium text-muted">franklin.ts</span>
+            </div>
+
+            <pre className="flex-1 flex flex-col justify-center px-5 py-5 lg:py-0 lg:pb-6 sm:px-6 font-mono text-[12px] sm:text-sm lg:text-[15px] leading-relaxed text-gray-300 overflow-x-auto">
+              <code>
+                <span className="text-gray-500 italic">{`// ${t.hero.codeComment}\n`}</span>
+                <span className="text-accent">const</span> <span className="text-white">franklin</span> = {'{'}
+                {'\n  '}
+                <span className="text-secondary">role</span>: <span className="text-gray-400">'Full Stack'</span>,
+                {'\n  '}
+                <span className="text-secondary">backend</span>: [<span className="text-gray-400">'Java'</span>,{' '}
+                <span className="text-gray-400">'.NET'</span>],
+                {'\n  '}
+                <span className="text-secondary">frontend</span>: [<span className="text-gray-400">'React'</span>,{' '}
+                <span className="text-gray-400">'Angular'</span>],
+                {'\n  '}
+                <span className="text-secondary">cloud</span>: [<span className="text-gray-400">'Azure'</span>,{' '}
+                <span className="text-gray-400">'AWS'</span>],
+                {'\n  '}
+                <span className="text-secondary">remote</span>: <span className="text-accent">true</span>,
+                {'\n'}
+                {'};'}
+              </code>
+            </pre>
+          </figure>
 
           {/* Badge flutuante 1 */}
-          <div className="absolute -bottom-4 -left-4 bg-card border border-cardBorder p-4 rounded-2xl shadow-xl animate-float">
-            <div className="text-secondary font-bold text-xl leading-none">4+</div>
-            <div className="text-gray-400 text-[10px] uppercase tracking-tighter">Anos Exp.</div>
+          <div className="hidden lg:block absolute -bottom-4 -left-4 bg-card border border-cardBorder p-4 rounded-2xl shadow-xl animate-float">
+            <div className="text-secondary font-bold text-xl leading-none">5+</div>
+            <div className="text-gray-400 text-[10px] uppercase tracking-tighter">{t.hero.yearsBadge}</div>
           </div>
 
           {/* Badge flutuante 2 */}
-          <div className="absolute top-10 -right-6 bg-card border border-cardBorder p-4 rounded-2xl shadow-xl animate-float-delayed">
+          <div className="hidden lg:block absolute top-10 -right-6 bg-card border border-cardBorder p-4 rounded-2xl shadow-xl animate-float-delayed">
             <svg className="w-6 h-6 text-primary mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-1.006 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946 1.006 3.42 3.42 0 011.007 1.946 3.42 3.42 0 001.006 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-1.006 1.946 3.42 3.42 0 01-1.007 1.946 3.42 3.42 0 00-1.946 1.006 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-1.006 3.42 3.42 0 01-1.007-1.946 3.42 3.42 0 00-1.006-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 001.006-1.946 3.42 3.42 0 011.007-1.946z" />
             </svg>

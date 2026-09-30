@@ -1,22 +1,26 @@
 import { Link } from 'react-router-dom';
-import { projetosLista } from '../data';
+import Highlight from '../components/Highlight';
+import { fmt } from '../i18n/context';
+import { useLanguage } from '../i18n/useLanguage';
+import { useContent } from '../i18n/useContent';
 
 const Projetos = () => {
+  const { t } = useLanguage();
+  const { projetos } = useContent();
+
   return (
     <section id="projetos" aria-labelledby="projetos-title" className="py-20 border-t border-cardBorder/50">
       {/* Cabeçalho da Seção */}
       <div className="mb-12">
         <h2 id="projetos-title" className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Projetos em <span className="text-gradient">Destaque</span>
+          <Highlight text={t.projects.title} />
         </h2>
-        <p className="text-muted text-base md:text-lg max-w-2xl">
-          Uma seleção de projetos que demonstram minha atuação Full Stack — do front-end às APIs, integrações e automação.
-        </p>
+        <p className="text-muted text-base md:text-lg max-w-2xl">{t.projects.subtitle}</p>
       </div>
 
       {/* Grid de Projetos */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projetosLista.map((projeto) => (
+        {projetos.map((projeto) => (
           <article
             key={projeto.id}
             className="bg-card border border-cardBorder rounded-2xl overflow-hidden card-hover flex flex-col group"
@@ -25,7 +29,7 @@ const Projetos = () => {
             <div className="h-56 w-full bg-gradient-to-br from-[#12121a] to-[#0a0a0f] flex items-center justify-center relative overflow-hidden border-b border-cardBorder/50">
               <img
                 src={projeto.imagem}
-                alt={`Capa do projeto ${projeto.titulo}`}
+                alt={fmt(t.projects.coverAlt, { titulo: projeto.titulo })}
                 loading="lazy"
                 decoding="async"
                 width={640}
@@ -37,10 +41,10 @@ const Projetos = () => {
               {/* Overlay de "Ver Detalhes" */}
               <Link
                 to={`/projeto/${projeto.id}`}
-                aria-label={`Ver detalhes técnicos do projeto ${projeto.titulo}`}
+                aria-label={fmt(t.projects.viewDetailsAria, { titulo: projeto.titulo })}
                 className="absolute inset-0 flex items-center justify-center bg-primary/40 opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity duration-300 backdrop-blur-sm"
               >
-                <span className="px-6 py-2 bg-white text-black font-bold rounded-full text-sm">Ver Detalhes Técnicos</span>
+                <span className="px-6 py-2 bg-white text-black font-bold rounded-full text-sm">{t.projects.viewDetails}</span>
               </Link>
             </div>
 
@@ -53,7 +57,7 @@ const Projetos = () => {
 
               {/* Principais Funcionalidades */}
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2">Funcionalidades</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2">{t.projects.features}</h4>
                 <ul className="flex flex-wrap gap-2">
                   {projeto.funcionalidades.slice(0, 4).map((func) => (
                     <li
@@ -89,7 +93,7 @@ const Projetos = () => {
                   to={`/projeto/${projeto.id}`}
                   className="flex items-center gap-1.5 text-sm font-bold text-secondary hover:text-white transition-colors"
                 >
-                  Estudo de Caso
+                  {t.projects.caseStudy}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -101,7 +105,7 @@ const Projetos = () => {
                       href={projeto.linkCodigo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Ver código do projeto ${projeto.titulo} no GitHub`}
+                      aria-label={fmt(t.projects.codeAria, { titulo: projeto.titulo })}
                       className="flex items-center gap-1.5 text-sm font-medium text-muted hover:text-white transition-colors"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -116,10 +120,10 @@ const Projetos = () => {
                       href={projeto.linkProjeto}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Abrir demo do projeto ${projeto.titulo}`}
+                      aria-label={fmt(t.projects.demoAria, { titulo: projeto.titulo })}
                       className="flex items-center gap-1.5 text-sm font-medium text-muted hover:text-white transition-colors"
                     >
-                      Demo
+                      {t.projects.demo}
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>

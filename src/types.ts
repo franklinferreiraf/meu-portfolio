@@ -1,78 +1,119 @@
 import type { ReactNode } from 'react';
 
-/** Cartão de destaque da seção "Sobre Mim". */
-export interface SobreCard {
+/*
+ * Tipos "Base" descrevem o que fica em src/data (dados estruturais);
+ * os tipos completos já vêm com os textos no idioma atual (ver src/i18n/useContent.ts).
+ */
+
+export interface SobreCardBase {
   id: number;
-  titulo: string;
-  descricao: string;
   icone: ReactNode;
 }
 
-/** Projeto exibido no portfólio (listagem + página de detalhe). */
-export interface Projeto {
-  id: string;
+/** Cartão de destaque da seção "Sobre Mim". */
+export interface SobreCard extends SobreCardBase {
   titulo: string;
   descricao: string;
-  descricaoLonga: string;
-  problema: string;
-  solucao: string;
+}
+
+/** Métrica de resultado de um projeto (valor fica nos dados; rótulo, nas traduções). */
+export interface ProjetoMetricaBase {
+  id: string;
+  valor: string;
+}
+
+export interface ProjetoMetrica extends ProjetoMetricaBase {
+  label: string;
+}
+
+export interface ProjetoBase {
+  id: string;
+  titulo: string;
   tags: string[];
-  funcionalidades: string[];
   imagem: string;
   /** URL do site publicado (Demo). Vazio quando não houver. */
   linkProjeto: string;
   /** URL do repositório no GitHub. Vazio quando não houver. */
   linkCodigo: string;
+  metricas: ProjetoMetricaBase[];
+}
+
+/** Projeto exibido no portfólio (listagem + página de detalhe). */
+export interface Projeto extends Omit<ProjetoBase, 'metricas'> {
+  descricao: string;
+  descricaoLonga: string;
+  problema: string;
+  solucao: string;
+  funcionalidades: string[];
   desafios: string;
   aprendizados: string;
   resultados: string;
   arquitetura: string;
+  metricas: ProjetoMetrica[];
 }
 
-/** Categoria de habilidades técnicas (agrupada em card). */
-export interface HabilidadeCategoria {
+export interface HabilidadeCategoriaBase {
   id: number;
-  categoria: string;
   icone: ReactNode;
   tecnologias: string[];
 }
 
-/** Item da timeline de experiência profissional. */
-export interface Experiencia {
+/** Categoria de habilidades técnicas (agrupada em card). */
+export interface HabilidadeCategoria extends HabilidadeCategoriaBase {
+  categoria: string;
+}
+
+export interface ExperienciaBase {
   id: number;
   periodo: string;
+}
+
+/** Item da timeline de experiência profissional. */
+export interface Experiencia extends ExperienciaBase {
   cargo: string;
   empresa?: string;
   atividades: string[];
 }
 
-/** Estatística exibida na seção de métricas. */
-export interface Metrica {
+export interface MetricaBase {
   id: number;
   valor: string;
+}
+
+/** Estatística exibida na seção de métricas. */
+export interface Metrica extends MetricaBase {
   label: string;
 }
 
-/** Certificação ou curso. */
-export interface Certificacao {
+export interface CertificacaoBase {
   id: number;
-  nome: string;
-  emissor: string;
   /** Marca um card de "vaga" para certificações futuras. */
   placeholder?: boolean;
 }
 
-/** Formação acadêmica. */
-export interface Formacao {
+/** Certificação ou curso. */
+export interface Certificacao extends CertificacaoBase {
+  nome: string;
+  emissor: string;
+}
+
+export interface FormacaoBase {
   id: number;
-  curso: string;
   instituicao: string;
+}
+
+/** Formação acadêmica. */
+export interface Formacao extends FormacaoBase {
+  curso: string;
   periodo: string;
 }
 
-/** Idioma e nível de proficiência. */
-export interface Idioma {
+export interface IdiomaBase {
   id: number;
+}
+
+/** Idioma e nível de proficiência. */
+export interface Idioma extends IdiomaBase {
   idioma: string;
   nivel: string;
 }

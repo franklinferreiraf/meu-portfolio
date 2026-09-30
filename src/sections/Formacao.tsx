@@ -1,21 +1,24 @@
-import { formacoes, idiomas } from '../data';
+import Highlight from '../components/Highlight';
+import { useLanguage } from '../i18n/useLanguage';
+import { useContent } from '../i18n/useContent';
 
 const Formacao = () => {
+  const { t } = useLanguage();
+  const { formacoes, idiomas } = useContent();
+
   return (
     <section id="formacao" aria-labelledby="formacao-title" className="py-20 border-t border-cardBorder/50">
       <div className="mb-12">
         <h2 id="formacao-title" className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Formação & <span className="text-gradient">Idiomas</span>
+          <Highlight text={t.education.title} />
         </h2>
-        <p className="text-muted text-base md:text-lg max-w-2xl">
-          Formação acadêmica e proficiência em idiomas.
-        </p>
+        <p className="text-muted text-base md:text-lg max-w-2xl">{t.education.subtitle}</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Formação Acadêmica */}
         <div className="lg:col-span-2">
-          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Formação Acadêmica</h3>
+          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">{t.education.academic}</h3>
           <ul className="space-y-4">
             {formacoes.map((formacao) => (
               <li key={formacao.id} className="bg-card border border-cardBorder rounded-2xl p-6 card-hover flex items-start gap-4">
@@ -39,7 +42,7 @@ const Formacao = () => {
 
         {/* Idiomas */}
         <div>
-          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Idiomas</h3>
+          <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">{t.education.languages}</h3>
           <ul className="space-y-4">
             {idiomas.map((idioma) => (
               <li key={idioma.id} className="bg-card border border-cardBorder rounded-2xl p-6 card-hover flex items-center justify-between">

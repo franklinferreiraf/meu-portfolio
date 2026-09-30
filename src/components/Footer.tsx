@@ -1,4 +1,8 @@
+import { useLanguage } from '../i18n/useLanguage';
+
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="border-t border-cardBorder/50 py-8 mt-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -8,7 +12,7 @@ const Footer = () => {
             type="button"
             className="flex items-center gap-2 group cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            aria-label="Voltar ao topo"
+            aria-label={t.footer.backToTop}
           >
             <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-secondary p-2 shadow-lg shadow-primary/10">
               <img src="/logo-f.svg" alt="" aria-hidden="true" className="w-full h-full object-contain brightness-0 invert" />
@@ -18,7 +22,7 @@ const Footer = () => {
             </span>
           </button>
           <p className="text-muted text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} Franklin Ferreira. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Franklin Ferreira. {t.footer.rights}
           </p>
         </div>
 
@@ -50,7 +54,7 @@ const Footer = () => {
           </div>
 
           <a href="#home" className="text-sm font-medium text-secondary hover:text-white transition-colors">
-            Início
+            {t.footer.home}
           </a>
         </div>
       </div>

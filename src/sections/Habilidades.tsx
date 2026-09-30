@@ -1,16 +1,19 @@
-import { habilidades } from '../data';
+import Highlight from '../components/Highlight';
+import { useLanguage } from '../i18n/useLanguage';
+import { useContent } from '../i18n/useContent';
 
 const Habilidades = () => {
+  const { t } = useLanguage();
+  const { habilidades } = useContent();
+
   return (
     <section id="habilidades" aria-labelledby="habilidades-title" className="py-20 border-t border-cardBorder/50">
       {/* Cabeçalho */}
       <div className="mb-12">
         <h2 id="habilidades-title" className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Habilidades <span className="text-gradient">Técnicas</span>
+          <Highlight text={t.skills.title} />
         </h2>
-        <p className="text-muted text-base md:text-lg max-w-2xl">
-          Tecnologias e ferramentas que utilizo no dia a dia para construir aplicações completas e eficientes.
-        </p>
+        <p className="text-muted text-base md:text-lg max-w-2xl">{t.skills.subtitle}</p>
       </div>
 
       {/* Grid de Categorias */}
