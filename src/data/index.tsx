@@ -1,16 +1,23 @@
+/**
+ * Dados estruturais do portfólio (ids, ícones, imagens, links e tecnologias).
+ * Os textos exibidos ficam em src/i18n/pt.json e src/i18n/en.json, indexados pelos mesmos ids.
+ */
 import type {
-  SobreCard,
-  Projeto,
-  HabilidadeCategoria,
-  Experiencia,
-  Metrica,
-  Certificacao,
-  Formacao,
-  Idioma,
+  SobreCardBase,
+  ProjetoBase,
+  HabilidadeCategoriaBase,
+  ExperienciaBase,
+  MetricaBase,
+  CertificacaoBase,
+  FormacaoBase,
+  IdiomaBase,
 } from '../types';
 
 /** Usuário do GitHub — usado nos widgets públicos de estatísticas. */
 export const githubUsername = 'franklinferreiraf';
+
+/** Arquivo do currículo servido a partir de /public. */
+export const curriculoUrl = '/Curriculo_Franklin_Ferreira_Geral.pdf';
 
 /** Badges de stack exibidos logo abaixo da descrição do Hero. */
 export const heroBadges: string[] = [
@@ -26,12 +33,9 @@ export const heroBadges: string[] = [
   'AWS',
 ];
 
-export const sobreCards: SobreCard[] = [
+export const sobreCards: SobreCardBase[] = [
   {
     id: 1,
-    titulo: 'Arquitetura & Código Limpo',
-    descricao:
-      'Desenvolvimento de sistemas escaláveis e de fácil manutenção, com arquitetura em camadas e as melhores práticas de mercado.',
     icone: (
       <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -40,8 +44,6 @@ export const sobreCards: SobreCard[] = [
   },
   {
     id: 2,
-    titulo: 'Performance & Otimização',
-    descricao: 'Foco em aplicações performáticas, com carregamento rápido, otimização de recursos e Core Web Vitals saudáveis.',
     icone: (
       <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -50,8 +52,6 @@ export const sobreCards: SobreCard[] = [
   },
   {
     id: 3,
-    titulo: 'Soluções de Ponta a Ponta',
-    descricao: 'Atuação em todo o ciclo de vida do produto — do front-end às APIs REST, integrações e automação de processos.',
     icone: (
       <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -60,106 +60,63 @@ export const sobreCards: SobreCard[] = [
   },
 ];
 
-export const projetosLista: Projeto[] = [
+/**
+ * Projetos. `metricas` alimenta o bloco "Resultados em Números" do estudo de caso:
+ * os valores entre colchetes são placeholders — troque pelos números reais.
+ * O rótulo de cada métrica fica nos arquivos de tradução (projects.items.<id>.metricas.<id>).
+ */
+export const projetosLista: ProjetoBase[] = [
   {
     id: 'ffsystem',
     titulo: 'FFSystem',
-    descricao: 'Sistema ERP/PDV completo para gestão comercial.',
-    descricaoLonga:
-      'O FFSystem é um ecossistema ERP/PDV completo focado em automação comercial e gestão eficiente para pequenos e médios comércios. Reúne controle de estoque, vendas, clientes e financeiro em uma interface intuitiva com um backend robusto em Spring Boot e APIs REST autenticadas por JWT.',
-    problema:
-      'Comércios locais sofriam com a falta de controle centralizado de estoque e vendas, utilizando métodos manuais propensos a erros e perda de dados financeiros.',
-    solucao:
-      'Desenvolvi uma plataforma integrada que automatiza o fluxo de caixa, controla o inventário em tempo real e gera relatórios analíticos para tomada de decisão.',
     tags: ['Java', 'Spring Boot', 'React', 'PostgreSQL'],
-    funcionalidades: [
-      'Controle de estoque',
-      'Gestão de clientes',
-      'Financeiro',
-      'Vendas',
-      'Dashboard',
-      'APIs REST',
-      'Autenticação JWT',
-    ],
     imagem: '/projetos/ffsystem.webp',
     linkProjeto: 'https://site-ffsystem.vercel.app/',
     linkCodigo: '',
-    desafios: 'Sincronização de estoque em tempo real e geração de relatórios complexos com alta performance.',
-    aprendizados: 'Aprofundamento em arquitetura Spring Boot, autenticação JWT e padrões de design para sistemas de gestão.',
-    resultados: 'Redução estimada de 30% no tempo gasto em tarefas administrativas pelos usuários.',
-    arquitetura:
-      'Arquitetura em camadas com Front-end em React, Back-end em Java Spring Boot expondo APIs REST e banco de dados relacional PostgreSQL.',
+    metricas: [
+      { id: 'tempo', valor: '[X]%' },
+      { id: 'usuarios', valor: '[Y]' },
+      { id: 'api', valor: '[Z] ms' },
+    ],
   },
   {
     id: 'europa-pra-vc',
     titulo: 'Europa Pra VC',
-    descricao: 'Plataforma internacional para serviços de imigração e comércio internacional.',
-    descricaoLonga:
-      'Plataforma internacional voltada a serviços relacionados à imigração e ao comércio internacional, com marketplace, painel administrativo e integração entre múltiplas APIs. Construída sobre uma arquitetura escalável com back-end em .NET e front-end em React.',
-    problema:
-      'A complexidade de serviços de imigração e comércio internacional exigia uma plataforma única, escalável e integrada a diferentes serviços externos.',
-    solucao:
-      'Uma plataforma completa com marketplace, sistema de pedidos, gestão de usuários e integração de APIs, sustentada por uma arquitetura escalável.',
     tags: ['React', '.NET', 'PostgreSQL', 'APIs REST'],
-    funcionalidades: [
-      'Integração de APIs',
-      'Marketplace',
-      'Painel administrativo',
-      'Sistema de pedidos',
-      'Gestão de usuários',
-      'Arquitetura escalável',
-    ],
     imagem: '/projetos/europapravc.webp',
     linkProjeto: 'https://europapravc.com/',
     linkCodigo: '',
-    desafios: 'Gestão de estado complexo e integração confiável com múltiplos provedores de serviços externos.',
-    aprendizados: 'Experiência prática com integração de APIs de terceiros e desenho de arquiteturas escaláveis em .NET.',
-    resultados: 'Expansão da base de usuários e estabilidade operacional em escala internacional.',
-    arquitetura:
-      'Back-end em .NET com arquitetura limpa expondo APIs REST, front-end em React e banco de dados PostgreSQL.',
+    metricas: [
+      { id: 'usuarios', valor: '[X]' },
+      { id: 'integracoes', valor: '[Y]' },
+      { id: 'pedidos', valor: '[Z]' },
+    ],
   },
   {
     id: 'grupo-mais-saude',
     titulo: 'Grupo Mais Saúde',
-    descricao: 'Portal institucional para clínica médica.',
-    descricaoLonga:
-      'Portal institucional para clínica médica, com foco em interface responsiva, SEO, performance e componentes reutilizáveis para facilitar o acesso do paciente às informações de saúde.',
-    problema:
-      'Pacientes tinham dificuldade em encontrar informações sobre especialidades e serviços da clínica de forma rápida e acessível.',
-    solucao: 'Interface institucional intuitiva, responsiva e otimizada para SEO e performance, com componentes reutilizáveis.',
     tags: ['React', 'JavaScript', 'CSS'],
-    funcionalidades: [
-      'Interface responsiva',
-      'SEO',
-      'Otimização de performance',
-      'Componentes reutilizáveis',
-    ],
     imagem: '/projetos/gpmaissaude.webp',
     linkProjeto: 'https://gpmaisaude.com.br/',
     linkCodigo: '',
-    desafios: 'Garantir acessibilidade e ótima performance web (Core Web Vitals) em um portal rico em conteúdo.',
-    aprendizados: 'Foco intensivo em SEO técnico, performance e reuso de componentes.',
-    resultados: 'Melhoria no tempo de permanência e na experiência de navegação dos pacientes.',
-    arquitetura: 'Front-end modularizado em React com foco em reuso de componentes, SEO e performance.',
+    metricas: [
+      { id: 'lighthouse', valor: '[X]/100' },
+      { id: 'permanencia', valor: '[Y]%' },
+      { id: 'visitas', valor: '[Z]' },
+    ],
   },
   {
-    id: 'manutencao-industrial',
-    titulo: 'EJC Group',
-    descricao: 'Website institucional para empresa de engenharia industrial.',
-    descricaoLonga:
-      'Website institucional de alta performance para a EJC Group, empresa de engenharia industrial. Construído com React e Tailwind, com foco em SEO, responsividade, performance e landing pages de conversão.',
-    problema:
-      'A empresa precisava de uma presença digital que transmitisse a seriedade e a complexidade técnica de seus serviços para atrair clientes industriais.',
-    solucao: 'Site moderno com landing pages focadas em conversão, destacando serviços e expertise técnica.',
-    tags: ['React', 'JavaScript', 'Tailwind'],
-    funcionalidades: ['SEO', 'Responsividade', 'Performance', 'Landing pages'],
-    imagem: '/projetos/manutencaoindustrial.webp',
-    linkProjeto: 'https://site-manutencao-industria.vercel.app/',
+    id: 'marianne-soares-nutri',
+    titulo: 'Marianne Soares Nutri',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'SEO'],
+    imagem: '/projetos/mariannesoaresnutri.png',
+    linkProjeto: 'https://www.mariannesoaresnutri.com.br/',
     linkCodigo: '',
-    desafios: 'Trabalhar com imagens de alta resolução mantendo um carregamento extremamente rápido.',
-    aprendizados: 'Otimização de assets e técnicas avançadas de estilização com Tailwind CSS.',
-    resultados: 'Aumento no tráfego orgânico e na captação de leads qualificados.',
-    arquitetura: 'SPA construída com React e Tailwind CSS, priorizando SEO, performance e responsividade.',
+    metricas: [
+      { id: 'lighthouse', valor: '[X]/100' },
+      { id: 'agendamentos', valor: '[Y]' },
+      { id: 'visitas', valor: '[Z]' },
+    ],
   },
 ];
 
@@ -193,95 +150,98 @@ const iconSalesforce = (
   </svg>
 );
 
-export const habilidades: HabilidadeCategoria[] = [
+const iconIntegracoes = (
+  <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+  </svg>
+);
+
+const iconArquitetura = (
+  <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+  </svg>
+);
+
+/** O nome de cada categoria fica nas traduções (skills.categories.<id>). */
+export const habilidades: HabilidadeCategoriaBase[] = [
   {
     id: 1,
-    categoria: 'Front-end',
     icone: iconFrontend,
-    tecnologias: ['React', 'Angular', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Flutter'],
+    tecnologias: ['React', 'Angular', 'Ionic', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Flutter'],
   },
   {
     id: 2,
-    categoria: 'Back-end',
     icone: iconBackend,
-    tecnologias: ['Java', 'Spring Boot', 'C#', '.NET', 'NestJS', 'Node.js', 'APIs REST'],
+    tecnologias: [
+      'Java',
+      'Spring Boot',
+      'Java EE',
+      'C#',
+      '.NET',
+      'NestJS',
+      'Node.js',
+      'PHP',
+      'Elixir',
+      'Dynamics CRM',
+      'APIs REST',
+    ],
   },
   {
     id: 3,
-    categoria: 'Banco de Dados',
     icone: iconDatabase,
-    tecnologias: ['PostgreSQL', 'MySQL', 'SQL Server', 'MongoDB'],
+    tecnologias: ['PostgreSQL', 'MySQL', 'SQL Server', 'Oracle', 'MongoDB', 'Redis'],
   },
   {
     id: 4,
-    categoria: 'Cloud',
     icone: iconCloud,
-    tecnologias: ['AWS', 'Azure', 'Vercel', 'Docker'],
+    tecnologias: [
+      'AWS',
+      'AWS CloudFront / EKS',
+      'Azure',
+      'Azure Functions',
+      'Kubernetes',
+      'OpenShift',
+      'Vercel',
+      'Docker',
+    ],
   },
   {
     id: 5,
-    categoria: 'Salesforce',
+    icone: iconIntegracoes,
+    tecnologias: ['Kafka', 'RabbitMQ', 'MuleSoft', 'Webhooks (Stripe, Pagar.me)'],
+  },
+  {
+    id: 6,
+    icone: iconArquitetura,
+    tecnologias: [
+      'SOLID',
+      'Clean Architecture',
+      'Design Patterns',
+      'JWT',
+      'Maven',
+      'Git Flow',
+      'Testes Unitários e de Integração',
+    ],
+  },
+  {
+    id: 7,
     icone: iconSalesforce,
     tecnologias: ['Apex', 'Lightning Web Components', 'Salesforce Flow', 'SOQL', 'SOSL', 'Integrações REST', 'Process Builder Migration'],
   },
 ];
 
-export const experiencias: Experiencia[] = [
-  {
-    id: 1,
-    periodo: '2024 – 2026',
-    cargo: 'Desenvolvedor de Soluções Internas',
-    empresa: 'Nunes Invest',
-    atividades: [
-      'Desenvolvimento de ferramentas internas',
-      'APIs REST',
-      'Integração Front-end / Back-end',
-      'SQL',
-      'Java',
-      'React',
-      'C# / .NET',
-      'Git',
-      'Automação de processos',
-    ],
-  },
-  {
-    id: 2,
-    periodo: '2023 – 2024',
-    cargo: 'Desenvolvedor de Software',
-    empresa: 'Freelancer',
-    atividades: [
-      'Desenvolvimento de aplicações web',
-      'React',
-      'Java',
-      'Spring Boot',
-      'APIs REST',
-      'Bancos de dados relacionais',
-      'Integrações',
-      'Correção de bugs',
-      'Manutenção evolutiva',
-    ],
-  },
-  {
-    id: 3,
-    periodo: '2022 – 2023',
-    cargo: 'Desenvolvedor Salesforce',
-    atividades: [
-      'Apex',
-      'LWC',
-      'Salesforce Flow',
-      'SOQL',
-      'Integrações REST',
-      'Migração de Process Builder',
-      'Evolução de funcionalidades',
-    ],
-  },
+/** Cargo, empresa e atividades ficam nas traduções (experience.items.<id>). */
+export const experiencias: ExperienciaBase[] = [
+  { id: 1, periodo: '2024 – 2026' },
+  { id: 2, periodo: '2022 – 2024' },
+  { id: 3, periodo: '2021 – 2022' },
 ];
 
-export const metricas: Metrica[] = [
-  { id: 1, valor: '4+', label: 'Anos desenvolvendo software' },
-  { id: 2, valor: '10+', label: 'Projetos desenvolvidos' },
-  { id: 3, valor: '20+', label: 'Automações Salesforce' },
-  { id: 4, valor: '5+', label: 'Projetos Full Stack' },
+export const metricas: MetricaBase[] = [
+  { id: 1, valor: '5+' },
+  { id: 2, valor: '10+' },
+  { id: 3, valor: '6+' },
+  { id: 4, valor: '5+' },
 ];
 
 /** Competências apresentadas como badges. */
@@ -307,29 +267,31 @@ export const competencias: string[] = [
   'LWC',
   'Azure',
   'AWS',
+  'Oracle',
+  'Redis',
+  'Kafka',
+  'RabbitMQ',
+  'Kubernetes',
+  'Dynamics CRM',
+  'JWT',
+  'Maven',
+  'Elixir',
+  'Ionic',
   'Scrum',
   'Kanban',
 ];
 
-export const formacoes: Formacao[] = [
-  {
-    id: 1,
-    curso: 'Bacharelado em Sistemas de Informação',
-    instituicao: 'UNEX – Centro Universitário de Excelência',
-    periodo: '2023 – 2026 (Previsão)',
-  },
+export const formacoes: FormacaoBase[] = [
+  { id: 1, instituicao: 'UNEX – Centro Universitário de Excelência' },
 ];
 
-export const idiomas: Idioma[] = [
-  { id: 1, idioma: 'Português', nivel: 'Nativo' },
-  { id: 2, idioma: 'Inglês', nivel: 'Intermediário' },
-];
+export const idiomas: IdiomaBase[] = [{ id: 1 }, { id: 2 }];
 
-export const certificacoes: Certificacao[] = [
-  { id: 1, nome: 'Salesforce Associate', emissor: 'Salesforce' },
-  { id: 2, nome: 'Salesforce Platform Developer I (Estudo)', emissor: 'Salesforce' },
-  { id: 3, nome: 'Java Programming', emissor: 'Oracle / Alura' },
-  { id: 4, nome: 'Desenvolvimento Web Full Stack', emissor: 'DNC' },
-  { id: 5, nome: 'React Advanced', emissor: 'Rocketseat' },
-  { id: 6, nome: 'Espaço para futuras certificações', emissor: 'Em constante evolução', placeholder: true },
+export const certificacoes: CertificacaoBase[] = [
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 },
+  { id: 5 },
+  { id: 6, placeholder: true },
 ];
