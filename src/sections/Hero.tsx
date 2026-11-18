@@ -1,11 +1,14 @@
 import { useLanguage } from '../i18n/useLanguage';
 import { useContent } from '../i18n/useContent';
 
+/** Subtítulo do Hero — nomes de tecnologia, iguais nos dois idiomas. */
+const subtitulo = ['Back-end', 'Java', 'C#/.NET', 'TypeScript', 'React'];
+
 const Hero = () => {
   const { t } = useLanguage();
   const { heroBadges } = useContent();
-  // PDF do currículo no idioma atual, servido a partir de /public (o nome tem espaços, por isso o encodeURI).
-  const curriculoUrl = encodeURI(`/${t.hero.cvFile}`);
+  // PDF do currículo no idioma ativo (PT → PT-BR, EN → EN), servido a partir de /public/curriculo.
+  const curriculoUrl = `/curriculo/${t.hero.cvFile}`;
 
   return (
     <section
@@ -25,8 +28,12 @@ const Hero = () => {
           <span className="text-gradient">{t.hero.titleLine2}</span>
         </h1>
         <p className="text-lg md:text-2xl text-gray-300 font-medium mb-6 tracking-wide">
-          Java <span className="text-secondary">•</span> Spring Boot <span className="text-secondary">•</span> React{' '}
-          <span className="text-secondary">•</span> C#/.NET <span className="text-secondary">•</span> Salesforce
+          {subtitulo.map((item, i) => (
+            <span key={item}>
+              {i > 0 && <span className="text-secondary"> • </span>}
+              {item}
+            </span>
+          ))}
         </p>
 
         {/* Parágrafo de Apresentação */}
@@ -45,6 +52,12 @@ const Hero = () => {
             </li>
           ))}
         </ul>
+
+        {/* Disponibilidade */}
+        <p className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 text-sm font-medium text-secondary bg-secondary/10 border border-secondary/20 rounded-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-secondary" aria-hidden="true"></span>
+          {t.hero.availability}
+        </p>
 
         {/* Botões de Ação */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full sm:max-w-lg">
@@ -114,7 +127,7 @@ const Hero = () => {
               <span className="ml-3 text-xs font-medium text-muted">franklin.ts</span>
             </div>
 
-            <pre className="flex-1 flex flex-col justify-center px-5 py-5 lg:py-0 lg:pb-6 sm:px-6 font-mono text-[12px] sm:text-sm lg:text-[15px] leading-relaxed text-gray-300 overflow-x-auto">
+            <pre className="flex-1 flex flex-col justify-center px-5 py-5 lg:py-0 lg:pb-6 sm:px-6 font-mono text-[12px] sm:text-sm lg:text-[13px] leading-relaxed text-gray-300 overflow-x-auto">
               <code>
                 <span className="text-gray-500 italic">{`// ${t.hero.codeComment}\n`}</span>
                 <span className="text-accent">const</span> <span className="text-white">franklin</span> = {'{'}
@@ -122,7 +135,7 @@ const Hero = () => {
                 <span className="text-secondary">role</span>: <span className="text-gray-400">'Full Stack'</span>,
                 {'\n  '}
                 <span className="text-secondary">backend</span>: [<span className="text-gray-400">'Java'</span>,{' '}
-                <span className="text-gray-400">'.NET'</span>],
+                <span className="text-gray-400">'.NET'</span>, <span className="text-gray-400">'TypeScript'</span>],
                 {'\n  '}
                 <span className="text-secondary">frontend</span>: [<span className="text-gray-400">'React'</span>,{' '}
                 <span className="text-gray-400">'Angular'</span>],

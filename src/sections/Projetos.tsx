@@ -27,15 +27,26 @@ const Projetos = () => {
           >
             {/* Capa do Projeto */}
             <div className="h-56 w-full bg-gradient-to-br from-[#12121a] to-[#0a0a0f] flex items-center justify-center relative overflow-hidden border-b border-cardBorder/50">
-              <img
-                src={projeto.imagem}
-                alt={fmt(t.projects.coverAlt, { titulo: projeto.titulo })}
-                loading="lazy"
-                decoding="async"
-                width={640}
-                height={360}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+              {projeto.imagem ? (
+                <img
+                  src={projeto.imagem}
+                  alt={fmt(t.projects.coverAlt, { titulo: projeto.titulo })}
+                  loading="lazy"
+                  decoding="async"
+                  width={640}
+                  height={360}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              ) : (
+                // Sem print (produto com dados reais / trabalho sob contrato): capa neutra com nome e stack.
+                <div
+                  className="w-full h-full flex flex-col items-center justify-center gap-4 px-6 text-center group-hover:scale-105 transition-transform duration-500"
+                  aria-hidden="true"
+                >
+                  <span className="text-3xl md:text-4xl font-bold text-gradient">{projeto.titulo}</span>
+                  <span className="font-mono text-xs text-muted">{projeto.tags.slice(0, 4).join(' · ')}</span>
+                </div>
+              )}
               <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-300 pointer-events-none"></div>
 
               {/* Overlay de "Ver Detalhes" */}

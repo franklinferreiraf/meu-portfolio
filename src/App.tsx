@@ -7,9 +7,7 @@ import Sobre from './sections/Sobre';
 import Projetos from './sections/Projetos';
 import Habilidades from './sections/Habilidades';
 import Experiencia from './sections/Experiencia';
-import Competencias from './sections/Competencias';
 import Formacao from './sections/Formacao';
-import Certificacoes from './sections/Certificacoes';
 import Contato from './sections/Contato';
 import Footer from './components/Footer';
 import { useLanguage } from './i18n/useLanguage';
@@ -30,9 +28,7 @@ function HomePage() {
       <Projetos />
       <Habilidades />
       <Experiencia />
-      <Competencias />
       <Formacao />
-      <Certificacoes />
       <Contato />
     </>
   );

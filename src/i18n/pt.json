@@ -2,8 +2,8 @@
   "meta": {
     "htmlLang": "pt-BR",
     "ogLocale": "pt_BR",
-    "homeTitle": "Franklin Ferreira | Desenvolvedor Full Stack — Java, .NET, React, Angular",
-    "homeDescription": "Desenvolvedor Full Stack com 5+ anos e experiência internacional. Java, Spring Boot, C#/.NET, React e Angular: APIs REST, microsserviços, integrações e cloud.",
+    "homeTitle": "Franklin Ferreira — Desenvolvedor Full Stack | Java, C#/.NET, TypeScript, React",
+    "homeDescription": "Desenvolvedor Full Stack com ênfase em back-end: APIs REST, microsserviços, integrações e sistemas multi-tenant com Java, C#/.NET, TypeScript e React.",
     "projectTitle": "{titulo} — Estudo de Caso | Franklin Ferreira",
     "notFoundTitle": "Projeto não encontrado | Franklin Ferreira"
   },
@@ -30,32 +30,43 @@
   "hero": {
     "titleLine1": "Desenvolvedor",
     "titleLine2": "Full Stack",
-    "intro": "Desenvolvedor Full Stack com experiência no desenvolvimento de aplicações web, APIs REST, integrações entre sistemas e automação de processos. Atuação com React, Java, Spring Boot, C#/.NET e Salesforce, criando soluções escaláveis, performáticas e alinhadas às melhores práticas de desenvolvimento.",
+    "intro": "Desenvolvedor Full Stack com ênfase em back-end: APIs REST, microsserviços, integrações e sistemas multi-tenant. Experiência com Java/Spring Boot, C#/.NET e TypeScript, em produto próprio, consultoria internacional e sistemas corporativos.",
     "badgesLabel": "Principais tecnologias",
+    "availability": "Aberto a oportunidades • CLT ou PJ • Remoto",
     "viewProjects": "Ver Projetos",
     "downloadCv": "Baixar Currículo",
-    "cvFile": "CURRICULO - FRANKLIN FERREIRA DOS SANTOS.pdf",
+    "cvFile": "Franklin_Ferreira_Curriculo_PT-BR.pdf",
     "downloadCvAria": "Baixar currículo de Franklin Ferreira em PDF",
-    "codeCardLabel": "Card de código resumindo a stack de Franklin Ferreira: Java, .NET, React, Angular, Azure e AWS",
+    "codeCardLabel": "Card de código resumindo a stack de Franklin Ferreira: Java, .NET, TypeScript, React, Angular, Azure e AWS",
     "codeComment": "Aberto a novas oportunidades",
     "yearsBadge": "Anos Exp."
   },
   "metrics": {
     "ariaLabel": "Estatísticas",
     "items": {
-      "1": "Anos desenvolvendo software",
-      "2": "Projetos desenvolvidos",
-      "3": "Integrações & APIs REST",
-      "4": "Projetos Full Stack"
+      "1": {
+        "label": "Anos desenvolvendo software"
+      },
+      "2": {
+        "label": "Frentes de atuação",
+        "detalhe": "Produto próprio, consultoria internacional e sistemas corporativos"
+      },
+      "3": {
+        "label": "Stacks de back-end",
+        "detalhe": "Java, C#/.NET e TypeScript"
+      },
+      "4": {
+        "label": "Bancos de dados",
+        "detalhe": "PostgreSQL, SQL Server, Oracle, MySQL, MongoDB e Redis"
+      }
     }
   },
   "about": {
     "title": "Sobre {Mim}",
-    "lead": "Desenvolvedor Full Stack com atuação em projetos internacionais, transitando com naturalidade entre back-end e front-end com C#/.NET, Java, Spring Boot, React, Next.js e Angular.",
+    "lead": "Desenvolvedor Full Stack com ênfase em back-end, atuando com APIs REST, microsserviços, integrações entre sistemas, mensageria e bancos de dados.",
     "paragraphs": [
-      "Atualmente desenvolvo soluções para um cliente arquiteto em Madrid (Espanha) e já participei de projetos com empresas como Zühlke, BASF e SoftwareOne — construindo desde Design Systems e micro frontends até microsserviços e APIs RESTful baseadas em SOLID e Clean Architecture.",
-      "Tenho experiência sólida com integrações complexas: mensageria com Kafka e RabbitMQ, webhooks de pagamento (Stripe, Pagar.me), MuleSoft, Dynamics CRM e Salesforce, além de cloud com Azure, AWS, Kubernetes e OpenShift — sempre focando em performance, qualidade e boas práticas.",
-      "Atualmente curso Sistemas de Informação pela UNEX, com conclusão prevista para 2026."
+      "Já construí um produto próprio multi-tenant (Nexor OS, para lojas de veículos), atuei em consultoria internacional para um cliente em Madrid e desenvolvi sistemas corporativos com Java/Spring Boot e C#/.NET.",
+      "Curso Bacharelado em Sistemas de Informação na UNEX (conclusão prevista em 2026)."
     ],
     "cards": {
       "1": {
@@ -84,12 +95,41 @@
     "demo": "Demo",
     "demoAria": "Abrir demo do projeto {titulo}",
     "items": {
+      "nexor-os": {
+        "descricao": "Plataforma multi-tenant para lojas de veículos: isolamento por loja com RLS, importação idempotente com auditoria, pagamentos via webhooks e i18n pt-BR/es-US/en-US.",
+        "descricaoLonga": "O Nexor OS é um produto próprio para lojas de veículos que reúne painel, CRM de vendas, estoque, financeiro e agentes de IA no WhatsApp. É construído como um monorepo TypeScript com Clean Architecture sobre PostgreSQL multi-tenant.",
+        "problema": "Lojas de veículos precisam centralizar vendas, estoque e financeiro trazendo dados de outros ERPs — e, em uma plataforma compartilhada, cada loja só pode enxergar os próprios dados.",
+        "solucao": "Multi-tenancy em PostgreSQL com Row-Level Security e RBAC; importação de dados de outros ERPs com prévia, confirmação idempotente, reversão, criptografia AES-256-GCM e auditoria; pagamentos via webhooks com baixa automática.",
+        "funcionalidades": [
+          "Multi-tenant com RLS",
+          "Importação idempotente com auditoria",
+          "Pagamentos via webhooks",
+          "i18n pt-BR / es-US / en-US",
+          "CRM de vendas",
+          "Estoque e financeiro",
+          "Agentes de IA no WhatsApp",
+          "RBAC"
+        ],
+        "desafios": "Garantir o isolamento entre lojas no próprio banco de dados e tornar a importação segura: reexecutável sem duplicar registros, reversível e com dados sensíveis criptografados.",
+        "aprendizados": "Modelagem multi-tenant com Row-Level Security, desenho de operações idempotentes com trilha de auditoria e organização de um monorepo TypeScript com Clean Architecture.",
+        "resultados": "Plataforma multi-tenant com isolamento via RLS, importação idempotente com auditoria, baixa automática de pagamentos via webhooks e interface em pt-BR, es-US e en-US.",
+        "arquitetura": "Monorepo TypeScript com Clean Architecture, PostgreSQL com Row-Level Security, integrações via webhooks e CI/CD no Azure Pipelines.",
+        "metricas": {}
+      },
       "ffsystem": {
         "descricao": "Sistema ERP/PDV completo para gestão comercial.",
         "descricaoLonga": "O FFSystem é um ecossistema ERP/PDV completo focado em automação comercial e gestão eficiente para pequenos e médios comércios. Reúne controle de estoque, vendas, clientes e financeiro em uma interface intuitiva com um backend robusto em Spring Boot e APIs REST autenticadas por JWT.",
         "problema": "Comércios locais sofriam com a falta de controle centralizado de estoque e vendas, utilizando métodos manuais propensos a erros e perda de dados financeiros.",
         "solucao": "Desenvolvi uma plataforma integrada que automatiza o fluxo de caixa, controla o inventário em tempo real e gera relatórios analíticos para tomada de decisão.",
-        "funcionalidades": ["Controle de estoque", "Gestão de clientes", "Financeiro", "Vendas", "Dashboard", "APIs REST", "Autenticação JWT"],
+        "funcionalidades": [
+          "Controle de estoque",
+          "Gestão de clientes",
+          "Financeiro",
+          "Vendas",
+          "Dashboard",
+          "APIs REST",
+          "Autenticação JWT"
+        ],
         "desafios": "Sincronização de estoque em tempo real e geração de relatórios complexos com alta performance.",
         "aprendizados": "Aprofundamento em arquitetura Spring Boot, autenticação JWT e padrões de design para sistemas de gestão.",
         "resultados": "Redução estimada de 30% no tempo gasto em tarefas administrativas pelos usuários.",
@@ -100,12 +140,38 @@
           "api": "tempo médio de resposta das APIs"
         }
       },
+      "salesforce-freelancer": {
+        "titulo": "Projetos Salesforce e Freelancer",
+        "descricao": "Desenvolvimento na plataforma Salesforce e projetos freelancer, incluindo a migração de automações de Process Builder para Flow.",
+        "descricaoLonga": "Trabalhos na plataforma Salesforce e projetos como freelancer: desenvolvimento em Apex, componentes Lightning Web Components (LWC), automações com Flow, consultas SOQL e migração de automações legadas de Process Builder para Flow.",
+        "problema": "Automações legadas em Process Builder, ferramenta que a Salesforce está descontinuando, precisavam ser migradas sem interromper os processos de negócio.",
+        "solucao": "Reescrita das automações em Flow, com lógica complementar em Apex, componentes LWC na interface e consultas SOQL.",
+        "funcionalidades": [
+          "Apex",
+          "Lightning Web Components",
+          "Salesforce Flow",
+          "SOQL",
+          "Migração de Process Builder para Flow"
+        ],
+        "desafios": "Manter o comportamento das automações existentes durante a migração de Process Builder para Flow.",
+        "aprendizados": "Boas práticas do ecossistema Salesforce: limites de governança do Apex, automação declarativa com Flow e componentes LWC.",
+        "resultados": "Automações migradas de Process Builder para Flow, alinhadas à plataforma atual da Salesforce.",
+        "arquitetura": "Plataforma Salesforce: Apex na lógica de negócio, Lightning Web Components na interface, Flow para automações e SOQL para consultas.",
+        "metricas": {}
+      },
       "europa-pra-vc": {
         "descricao": "Plataforma internacional para serviços de imigração e comércio internacional.",
         "descricaoLonga": "Plataforma internacional voltada a serviços relacionados à imigração e ao comércio internacional, com marketplace, painel administrativo e integração entre múltiplas APIs. Construída sobre uma arquitetura escalável com back-end em .NET e front-end em React.",
         "problema": "A complexidade de serviços de imigração e comércio internacional exigia uma plataforma única, escalável e integrada a diferentes serviços externos.",
         "solucao": "Uma plataforma completa com marketplace, sistema de pedidos, gestão de usuários e integração de APIs, sustentada por uma arquitetura escalável.",
-        "funcionalidades": ["Integração de APIs", "Marketplace", "Painel administrativo", "Sistema de pedidos", "Gestão de usuários", "Arquitetura escalável"],
+        "funcionalidades": [
+          "Integração de APIs",
+          "Marketplace",
+          "Painel administrativo",
+          "Sistema de pedidos",
+          "Gestão de usuários",
+          "Arquitetura escalável"
+        ],
         "desafios": "Gestão de estado complexo e integração confiável com múltiplos provedores de serviços externos.",
         "aprendizados": "Experiência prática com integração de APIs de terceiros e desenho de arquiteturas escaláveis em .NET.",
         "resultados": "Expansão da base de usuários e estabilidade operacional em escala internacional.",
@@ -121,7 +187,12 @@
         "descricaoLonga": "Portal institucional para clínica médica, com foco em interface responsiva, SEO, performance e componentes reutilizáveis para facilitar o acesso do paciente às informações de saúde.",
         "problema": "Pacientes tinham dificuldade em encontrar informações sobre especialidades e serviços da clínica de forma rápida e acessível.",
         "solucao": "Interface institucional intuitiva, responsiva e otimizada para SEO e performance, com componentes reutilizáveis.",
-        "funcionalidades": ["Interface responsiva", "SEO", "Otimização de performance", "Componentes reutilizáveis"],
+        "funcionalidades": [
+          "Interface responsiva",
+          "SEO",
+          "Otimização de performance",
+          "Componentes reutilizáveis"
+        ],
         "desafios": "Garantir acessibilidade e ótima performance web (Core Web Vitals) em um portal rico em conteúdo.",
         "aprendizados": "Foco intensivo em SEO técnico, performance e reuso de componentes.",
         "resultados": "Melhoria no tempo de permanência e na experiência de navegação dos pacientes.",
@@ -132,12 +203,37 @@
           "visitas": "visitas mensais"
         }
       },
+      "manutencao-industrial": {
+        "descricao": "Website institucional para empresa de engenharia industrial.",
+        "descricaoLonga": "Website institucional de alta performance para a EJC Group, empresa de engenharia industrial. Construído com React e Tailwind, com foco em SEO, responsividade, performance e landing pages de conversão.",
+        "problema": "A empresa precisava de uma presença digital que transmitisse a seriedade e a complexidade técnica de seus serviços para atrair clientes industriais.",
+        "solucao": "Site moderno com landing pages focadas em conversão, destacando serviços e expertise técnica.",
+        "funcionalidades": [
+          "SEO",
+          "Responsividade",
+          "Performance",
+          "Landing pages"
+        ],
+        "desafios": "Trabalhar com imagens de alta resolução mantendo um carregamento extremamente rápido.",
+        "aprendizados": "Otimização de assets e técnicas avançadas de estilização com Tailwind CSS.",
+        "resultados": "Aumento no tráfego orgânico e na captação de leads qualificados.",
+        "arquitetura": "SPA construída com React e Tailwind CSS, priorizando SEO, performance e responsividade.",
+        "metricas": {}
+      },
       "marianne-soares-nutri": {
         "descricao": "Site institucional para nutricionista clínica e funcional.",
         "descricaoLonga": "Site institucional da nutricionista Marianne Soares Machado, em Feira de Santana (BA). Apresenta áreas de atuação, o programa Reset Metabólico™, como funciona a consulta, avaliações e FAQ, com agendamento direto pelo WhatsApp para atendimento presencial e on-line.",
         "problema": "A profissional precisava de uma presença digital própria que transmitisse credibilidade, fosse encontrada nas buscas locais e convertesse visitantes em agendamentos.",
         "solucao": "Site leve e responsivo com SEO local, dados estruturados para o Google e chamadas de ação que abrem o WhatsApp com mensagens pré-definidas para cada tipo de atendimento.",
-        "funcionalidades": ["Agendamento via WhatsApp", "SEO local", "Dados estruturados (JSON-LD)", "Open Graph", "Imagens responsivas", "FAQ", "Responsividade"],
+        "funcionalidades": [
+          "Agendamento via WhatsApp",
+          "SEO local",
+          "Dados estruturados (JSON-LD)",
+          "Open Graph",
+          "Imagens responsivas",
+          "FAQ",
+          "Responsividade"
+        ],
         "desafios": "Alcançar carregamento rápido com fotos em destaque e boa visibilidade nas buscas locais sem depender de framework.",
         "aprendizados": "SEO técnico para negócios locais (schema.org, Open Graph) e otimização de imagens com srcset e preload.",
         "resultados": "Canal próprio de captação de pacientes, com agendamentos direcionados ao WhatsApp.",
@@ -169,15 +265,15 @@
   },
   "skills": {
     "title": "Habilidades {Técnicas}",
-    "subtitle": "Tecnologias e ferramentas que utilizo no dia a dia para construir aplicações completas e eficientes.",
+    "subtitle": "Tecnologias, ferramentas e práticas que utilizo no dia a dia, do back-end ao front-end.",
     "categories": {
-      "1": "Front-end",
-      "2": "Back-end",
-      "3": "Banco de Dados",
-      "4": "Cloud",
-      "5": "Mensageria & Integrações",
-      "6": "Arquitetura & Qualidade",
-      "7": "Salesforce"
+      "1": "Back-end",
+      "2": "Bancos de dados",
+      "3": "Integrações e mensageria",
+      "4": "Cloud e DevOps",
+      "5": "Arquitetura e qualidade",
+      "6": "Front-end",
+      "7": "Outros"
     }
   },
   "experience": {
@@ -185,80 +281,46 @@
     "subtitle": "Trajetória profissional e as principais atividades que moldaram minha experiência como desenvolvedor.",
     "items": {
       "1": {
+        "periodo": "Janeiro/2026 – Novembro/2026",
         "cargo": "Desenvolvedor Full Stack",
-        "empresa": "Consultoria Internacional — Cliente: Arquiteto (Madrid/ES)",
-        "atividades": [
-          "Full Stack para clientes internacionais",
-          "C# / .NET",
-          "Java",
-          "React",
-          "Next.js",
-          "Angular",
-          "Design System do zero (Sass / styled-components)",
-          "Micro frontends",
-          "Microsserviços",
-          "Webhooks (Stripe, Pagar.me)",
-          "Kafka",
-          "RabbitMQ",
-          "APIs RESTful com SOLID e Clean Architecture",
-          "Dynamics CRM (Plugins, Actions, Web API, QueryExpression)",
-          "MuleSoft",
-          "Azure Functions",
-          "Azure Storage",
-          "Application Insights",
-          "Kubernetes",
-          "OpenShift",
-          "AWS CloudFront / EKS",
-          "CI/CD com GitLab CI",
-          "Elixir",
-          "GitHub Copilot"
+        "empresa": "Nexor",
+        "destaques": [
+          "Plataforma Nexor OS para lojas de veículos: painel, CRM de vendas, estoque, financeiro e agentes de IA no WhatsApp",
+          "Monorepo TypeScript com Clean Architecture",
+          "Multi-tenancy em PostgreSQL com Row-Level Security e RBAC",
+          "Importação de dados de outros ERPs com prévia, confirmação idempotente, reversão, criptografia AES-256-GCM e auditoria",
+          "Pagamentos via webhooks com baixa automática",
+          "CI/CD no Azure Pipelines"
         ]
       },
       "2": {
-        "cargo": "Desenvolvedor de Soluções Internas",
-        "empresa": "Nunes Invest",
-        "atividades": [
-          "Java / Spring Boot (Data, Security, MVC)",
-          "C# / .NET",
-          "Dynamics CRM",
-          "Azure Functions",
-          "Oracle",
-          "SQL Server",
-          "Redis",
-          "Kafka / RabbitMQ",
-          "WildFly",
-          "Java EE",
-          "jCompany / Jaguar",
-          "BPMN",
-          "Produtos de concessão de crédito",
-          "PHP",
-          "Angular",
-          "JWT",
-          "Testes unitários e de integração",
-          "Maven"
+        "periodo": "Janeiro/2024 – Dezembro/2025",
+        "cargo": "Desenvolvedor Full Stack",
+        "empresa": "Consultoria Internacional (Cliente: Arquiteto, Madrid/ES)",
+        "destaques": [
+          "Back-end em C#/.NET e Java; front-end em React, Next.js e Angular",
+          "Micro frontends e microsserviços",
+          "Webhooks de pagamento (Stripe, Pagar.me) e mensageria com Kafka e RabbitMQ",
+          "Integrações com Dynamics CRM e MuleSoft; Azure Functions",
+          "Kubernetes, OpenShift e AWS CloudFront/EKS; CI/CD com GitLab CI",
+          "Estilização com Sass e styled-components seguindo o Design System do projeto"
         ]
       },
       "3": {
-        "cargo": "Desenvolvedor de Software",
-        "empresa": "Diversos Projetos (Salesforce e Freelancer)",
-        "atividades": [
-          "Aplicações web",
-          "React",
-          "Java",
-          "Spring Boot",
-          "C# / .NET",
-          "Salesforce Apex",
-          "LWC",
-          "Flows",
-          "SOQL",
-          "Migração de Process Builder"
+        "periodo": "Janeiro/2021 – Dezembro/2023",
+        "cargo": "Desenvolvedor de Soluções Internas",
+        "empresa": "Nunes Invest",
+        "destaques": [
+          "APIs REST com Java, Spring Boot e C#/.NET",
+          "Integrações com Dynamics CRM e Azure Functions",
+          "Oracle, SQL Server e Redis; mensageria com Kafka e RabbitMQ",
+          "WildFly, Java EE e jCompany/Jaguar",
+          "Processos em BPMN e produtos de concessão de crédito",
+          "PHP, React e Angular"
         ]
       }
-    }
-  },
-  "competencies": {
-    "title": "Compet{ências}",
-    "subtitle": "Principais tecnologias, ferramentas e metodologias que domino e aplico no dia a dia."
+    },
+    "stackLabel": "Stack principal"
   },
   "education": {
     "title": "Formação & {Idiomas}",
@@ -272,27 +334,25 @@
       }
     },
     "languageItems": {
-      "1": { "idioma": "Português", "nivel": "Nativo" },
-      "2": { "idioma": "Inglês", "nivel": "Intermediário" }
-    }
-  },
-  "certifications": {
-    "title": "Certificações & {Cursos}",
-    "subtitle": "Investimento constante em aprendizado e validação técnica das minhas competências.",
-    "items": {
-      "1": { "nome": "Salesforce Associate", "emissor": "Salesforce" },
-      "2": { "nome": "Salesforce Platform Developer I (Estudo)", "emissor": "Salesforce" },
-      "3": { "nome": "Java Programming", "emissor": "Oracle / Alura" },
-      "4": { "nome": "Desenvolvimento Web Full Stack", "emissor": "DNC" },
-      "5": { "nome": "React Advanced", "emissor": "Rocketseat" },
-      "6": { "nome": "Espaço para futuras certificações", "emissor": "Em constante evolução" }
+      "1": {
+        "idioma": "Português",
+        "nivel": "Nativo"
+      },
+      "2": {
+        "idioma": "Inglês",
+        "nivel": "Intermediário"
+      }
     }
   },
   "contact": {
     "title": "Vamos construir algo {incrível?}",
-    "subtitle": "Estou disponível para oportunidades como Desenvolvedor Full Stack.",
+    "subtitle": "Aberto a oportunidades como Desenvolvedor Full Stack (back-end). CLT ou PJ, remoto.",
     "availabilityLabel": "Modelos de trabalho disponíveis",
-    "availability": ["Remoto", "Híbrido", "Presencial"],
+    "availability": [
+      "Remoto",
+      "CLT",
+      "PJ"
+    ],
     "name": "Seu nome",
     "email": "Seu e-mail",
     "message": "Sua mensagem",
