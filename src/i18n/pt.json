@@ -30,7 +30,7 @@
   "hero": {
     "titleLine1": "Desenvolvedor",
     "titleLine2": "Full Stack",
-    "intro": "Desenvolvedor Full Stack com ênfase em back-end: APIs REST, microsserviços, integrações e sistemas multi-tenant. Experiência com Java/Spring Boot, C#/.NET e TypeScript, em produto próprio, consultoria internacional e sistemas corporativos.",
+    "intro": "Desenvolvedor Full Stack com ênfase em back-end: APIs REST, microsserviços, integrações e sistemas multi-tenant. Experiência com Java/Spring Boot, C#/.NET e TypeScript, na Nexor (plataforma para lojas de veículos), consultoria internacional e sistemas corporativos.",
     "badgesLabel": "Principais tecnologias",
     "availability": "Aberto a oportunidades • CLT ou PJ • Remoto",
     "viewProjects": "Ver Projetos",
@@ -49,7 +49,7 @@
       },
       "2": {
         "label": "Frentes de atuação",
-        "detalhe": "Produto próprio, consultoria internacional e sistemas corporativos"
+        "detalhe": "Plataforma SaaS, consultoria internacional e sistemas corporativos"
       },
       "3": {
         "label": "Stacks de back-end",
@@ -65,7 +65,7 @@
     "title": "Sobre {Mim}",
     "lead": "Desenvolvedor Full Stack com ênfase em back-end, atuando com APIs REST, microsserviços, integrações entre sistemas, mensageria e bancos de dados.",
     "paragraphs": [
-      "Já construí um produto próprio multi-tenant (Nexor OS, para lojas de veículos), atuei em consultoria internacional para um cliente em Madrid e desenvolvi sistemas corporativos com Java/Spring Boot e C#/.NET.",
+      "Atuei no desenvolvimento do Nexor OS, plataforma multi-tenant para lojas de veículos, trabalhei em consultoria internacional para um cliente em Madrid e desenvolvi sistemas corporativos com Java/Spring Boot e C#/.NET.",
       "Curso Bacharelado em Sistemas de Informação na UNEX (conclusão prevista em 2026)."
     ],
     "cards": {
@@ -96,8 +96,8 @@
     "demoAria": "Abrir demo do projeto {titulo}",
     "items": {
       "nexor-os": {
-        "descricao": "Plataforma multi-tenant para lojas de veículos: isolamento por loja com RLS, importação idempotente com auditoria, pagamentos via webhooks e i18n pt-BR/es-US/en-US.",
-        "descricaoLonga": "O Nexor OS é um produto próprio para lojas de veículos que reúne painel, CRM de vendas, estoque, financeiro e agentes de IA no WhatsApp. É construído como um monorepo TypeScript com Clean Architecture sobre PostgreSQL multi-tenant.",
+        "descricao": "Atuação no desenvolvimento de uma plataforma multi-tenant para lojas de veículos: isolamento por loja com RLS, importação idempotente com auditoria, pagamentos via webhooks e i18n pt-BR/es-US/en-US.",
+        "descricaoLonga": "Atuação no desenvolvimento do Nexor OS, plataforma da Nexor para lojas de veículos que reúne painel, CRM de vendas, estoque, financeiro e agentes de IA no WhatsApp. A plataforma é construída como um monorepo TypeScript com Clean Architecture sobre PostgreSQL multi-tenant.",
         "problema": "Lojas de veículos precisam centralizar vendas, estoque e financeiro trazendo dados de outros ERPs — e, em uma plataforma compartilhada, cada loja só pode enxergar os próprios dados.",
         "solucao": "Multi-tenancy em PostgreSQL com Row-Level Security e RBAC; importação de dados de outros ERPs com prévia, confirmação idempotente, reversão, criptografia AES-256-GCM e auditoria; pagamentos via webhooks com baixa automática.",
         "funcionalidades": [

@@ -64,7 +64,7 @@ export const sobreCards: SobreCardBase[] = [
  */
 export const projetosLista: ProjetoBase[] = [
   {
-    // Produto próprio: sem print (dados reais de clientes) e repositório privado — só o estudo de caso.
+    // Projeto da Nexor (atuação como desenvolvedor): sem print (dados reais de clientes) e repositório privado — só o estudo de caso.
     id: 'nexor-os',
     titulo: 'Nexor OS',
     tags: ['TypeScript', 'PostgreSQL', 'RLS', 'Multi-tenant', 'Webhooks', 'Azure Pipelines'],

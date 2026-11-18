@@ -30,7 +30,7 @@
   "hero": {
     "titleLine1": "Full Stack",
     "titleLine2": "Developer",
-    "intro": "Full Stack Developer with a back-end focus: REST APIs, microservices, integrations and multi-tenant systems. Experienced with Java/Spring Boot, C#/.NET and TypeScript across my own product, international consulting and enterprise systems.",
+    "intro": "Full Stack Developer with a back-end focus: REST APIs, microservices, integrations and multi-tenant systems. Experienced with Java/Spring Boot, C#/.NET and TypeScript at Nexor (a platform for vehicle dealerships), international consulting and enterprise systems.",
     "badgesLabel": "Main technologies",
     "availability": "Open to opportunities • Full-time (CLT) or Contractor (PJ) • Remote",
     "viewProjects": "View Projects",
@@ -49,7 +49,7 @@
       },
       "2": {
         "label": "Fronts",
-        "detalhe": "Own product, international consulting and corporate systems"
+        "detalhe": "SaaS platform, international consulting and corporate systems"
       },
       "3": {
         "label": "Back-end stacks",
@@ -65,7 +65,7 @@
     "title": "About {Me}",
     "lead": "Full Stack Developer with a back-end focus, working with REST APIs, microservices, system integrations, messaging and databases.",
     "paragraphs": [
-      "I've built my own multi-tenant product (Nexor OS, for vehicle dealerships), worked in international consulting for a client in Madrid, and developed enterprise systems with Java/Spring Boot and C#/.NET.",
+      "I worked on the development of Nexor OS, a multi-tenant platform for vehicle dealerships, took part in international consulting for a client in Madrid, and developed enterprise systems with Java/Spring Boot and C#/.NET.",
       "I'm pursuing a Bachelor's degree in Information Systems at UNEX (expected graduation in 2026)."
     ],
     "cards": {
@@ -96,8 +96,8 @@
     "demoAria": "Open {titulo} live demo",
     "items": {
       "nexor-os": {
-        "descricao": "Multi-tenant platform for vehicle dealerships: per-tenant isolation with RLS, idempotent data import with auditing, webhook-based payments and pt-BR/es-US/en-US i18n.",
-        "descricaoLonga": "Nexor OS is my own product for vehicle dealerships, bringing together a dashboard, sales CRM, inventory, finance and AI agents on WhatsApp. It is built as a TypeScript monorepo with Clean Architecture on top of multi-tenant PostgreSQL.",
+        "descricao": "Worked on the development of a multi-tenant platform for vehicle dealerships: per-tenant isolation with RLS, idempotent data import with auditing, webhook-based payments and pt-BR/es-US/en-US i18n.",
+        "descricaoLonga": "Worked on the development of Nexor OS, Nexor's platform for vehicle dealerships, bringing together a dashboard, sales CRM, inventory, finance and AI agents on WhatsApp. The platform is built as a TypeScript monorepo with Clean Architecture on top of multi-tenant PostgreSQL.",
         "problema": "Dealerships need to centralize sales, inventory and finance while bringing in data from other ERPs — and, on a shared platform, each dealership must only see its own data.",
         "solucao": "Multi-tenancy in PostgreSQL with Row-Level Security and RBAC; data import from other ERPs with preview, idempotent confirmation, rollback, AES-256-GCM encryption and auditing; webhook-based payments with automatic settlement.",
         "funcionalidades": [
