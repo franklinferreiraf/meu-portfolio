@@ -54,16 +54,18 @@ const ProjectDetail = () => {
           <p className="text-xl text-muted leading-relaxed">{projeto.descricaoLonga}</p>
         </header>
 
-        {/* Imagem Principal */}
-        <div className="rounded-3xl overflow-hidden border border-cardBorder mb-12 shadow-2xl">
-          <img
-            src={projeto.imagem}
-            alt={fmt(t.projectDetail.screenshotAlt, { titulo: projeto.titulo })}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-auto"
-          />
-        </div>
+        {/* Imagem Principal (omitida quando o projeto não tem print público) */}
+        {projeto.imagem && (
+          <div className="rounded-3xl overflow-hidden border border-cardBorder mb-12 shadow-2xl">
+            <img
+              src={projeto.imagem}
+              alt={fmt(t.projectDetail.screenshotAlt, { titulo: projeto.titulo })}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto"
+            />
+          </div>
+        )}
 
         {/* Resultados em Números */}
         {projeto.metricas.length > 0 && (

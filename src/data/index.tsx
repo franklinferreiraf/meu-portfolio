@@ -8,7 +8,6 @@ import type {
   HabilidadeCategoriaBase,
   ExperienciaBase,
   MetricaBase,
-  CertificacaoBase,
   FormacaoBase,
   IdiomaBase,
 } from '../types';
@@ -65,6 +64,16 @@ export const sobreCards: SobreCardBase[] = [
  */
 export const projetosLista: ProjetoBase[] = [
   {
+    // Produto próprio: sem print (dados reais de clientes) e repositório privado — só o estudo de caso.
+    id: 'nexor-os',
+    titulo: 'Nexor OS',
+    tags: ['TypeScript', 'PostgreSQL', 'RLS', 'Multi-tenant', 'Webhooks', 'Azure Pipelines'],
+    imagem: '',
+    linkProjeto: '',
+    linkCodigo: '',
+    metricas: [],
+  },
+  {
     id: 'ffsystem',
     titulo: 'FFSystem',
     tags: ['Java', 'Spring Boot', 'React', 'PostgreSQL'],
@@ -78,8 +87,18 @@ export const projetosLista: ProjetoBase[] = [
     ],
   },
   {
+    // Card sem datas; o título traduzido fica em projects.items.salesforce-freelancer.titulo.
+    id: 'salesforce-freelancer',
+    titulo: 'Projetos Salesforce e Freelancer',
+    tags: ['Apex', 'LWC', 'Flow', 'SOQL'],
+    imagem: '',
+    linkProjeto: '',
+    linkCodigo: '',
+    metricas: [],
+  },
+  {
     id: 'europa-pra-vc',
-    titulo: 'Europa Pra VC',
+    titulo: 'Europa Pra Você',
     tags: ['React', '.NET', 'PostgreSQL', 'APIs REST'],
     imagem: '/projetos/europapravc.webp',
     linkProjeto: 'https://europapravc.com/',
@@ -102,6 +121,15 @@ export const projetosLista: ProjetoBase[] = [
       { id: 'permanencia', valor: '[Y]%' },
       { id: 'visitas', valor: '[Z]' },
     ],
+  },
+  {
+    id: 'manutencao-industrial',
+    titulo: 'EJC Group',
+    tags: ['React', 'JavaScript', 'Tailwind'],
+    imagem: '/projetos/manutencaoindustrial.webp',
+    linkProjeto: 'https://site-manutencao-industria.vercel.app/',
+    linkCodigo: '',
+    metricas: [],
   },
   {
     id: 'marianne-soares-nutri',
@@ -142,7 +170,7 @@ const iconCloud = (
   </svg>
 );
 
-const iconSalesforce = (
+const iconOutros = (
   <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
   </svg>
@@ -160,79 +188,91 @@ const iconArquitetura = (
   </svg>
 );
 
-/** O nome de cada categoria fica nas traduções (skills.categories.<id>). */
+/**
+ * Habilidades agrupadas (seção única). A ordem do array é a ordem de exibição;
+ * o nome de cada grupo fica nas traduções (skills.categories.<id>) e os termos
+ * que mudam de idioma, em terms.
+ */
 export const habilidades: HabilidadeCategoriaBase[] = [
   {
     id: 1,
-    icone: iconFrontend,
-    tecnologias: ['React', 'Angular', 'Ionic', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Flutter'],
+    icone: iconBackend,
+    tecnologias: ['Java', 'Spring Boot', 'Java EE', 'C#', '.NET', 'TypeScript', 'Node.js', 'NestJS', 'PHP', 'Elixir', 'APIs REST'],
   },
   {
     id: 2,
-    icone: iconBackend,
-    tecnologias: [
-      'Java',
-      'Spring Boot',
-      'Java EE',
-      'C#',
-      '.NET',
-      'NestJS',
-      'Node.js',
-      'PHP',
-      'Elixir',
-      'Dynamics CRM',
-      'APIs REST',
-    ],
+    icone: iconDatabase,
+    tecnologias: ['PostgreSQL', 'PostgreSQL com RLS', 'Oracle', 'SQL Server', 'MySQL', 'MongoDB', 'Redis'],
   },
   {
     id: 3,
-    icone: iconDatabase,
-    tecnologias: ['PostgreSQL', 'MySQL', 'SQL Server', 'Oracle', 'MongoDB', 'Redis'],
+    icone: iconIntegracoes,
+    tecnologias: ['Kafka', 'RabbitMQ', 'Webhooks (Stripe, Pagar.me)', 'MuleSoft', 'Dynamics CRM', 'Integrações REST'],
   },
   {
     id: 4,
     icone: iconCloud,
     tecnologias: [
-      'AWS',
-      'AWS CloudFront / EKS',
       'Azure',
       'Azure Functions',
+      'Azure DevOps (Pipelines e Boards)',
+      'AWS (CloudFront / EKS)',
       'Kubernetes',
       'OpenShift',
-      'Vercel',
       'Docker',
+      'GitLab CI',
+      'Vercel',
+      'Git',
     ],
   },
   {
     id: 5,
-    icone: iconIntegracoes,
-    tecnologias: ['Kafka', 'RabbitMQ', 'MuleSoft', 'Webhooks (Stripe, Pagar.me)'],
+    icone: iconArquitetura,
+    tecnologias: [
+      'Clean Architecture',
+      'SOLID',
+      'Design Patterns',
+      'Microsserviços',
+      'Multi-tenancy',
+      'Idempotência',
+      'Auditoria',
+      'Criptografia em repouso',
+      'RBAC',
+      'JWT',
+      'Testes Unitários e de Integração',
+      'Maven',
+    ],
   },
   {
     id: 6,
-    icone: iconArquitetura,
+    icone: iconFrontend,
     tecnologias: [
-      'SOLID',
-      'Clean Architecture',
-      'Design Patterns',
-      'JWT',
-      'Maven',
-      'Git Flow',
-      'Testes Unitários e de Integração',
+      'React',
+      'Next.js',
+      'Angular',
+      'TypeScript',
+      'JavaScript',
+      'HTML5',
+      'CSS3',
+      'Tailwind CSS',
+      'Sass',
+      'styled-components',
+      'Ionic',
+      'Flutter',
     ],
   },
   {
     id: 7,
-    icone: iconSalesforce,
-    tecnologias: ['Apex', 'Lightning Web Components', 'Salesforce Flow', 'SOQL', 'SOSL', 'Integrações REST', 'Process Builder Migration'],
+    icone: iconOutros,
+    tecnologias: ['Salesforce (Apex, LWC, Flow, SOQL)', 'WildFly', 'BPMN', 'Agentes de IA', 'Scrum', 'Kanban'],
   },
 ];
 
-/** Cargo, empresa e atividades ficam nas traduções (experience.items.<id>). */
+/** Do mais recente para o mais antigo. Período, cargo, empresa e destaques ficam nas traduções (experience.items.<id>). */
 export const experiencias: ExperienciaBase[] = [
-  { id: 1, periodo: '2024 – 2026' },
-  { id: 2, periodo: '2022 – 2024' },
-  { id: 3, periodo: '2021 – 2022' },
+  { id: 1, stack: ['TypeScript', 'PostgreSQL', 'RLS', 'RBAC', 'Clean Architecture', 'Webhooks', 'Azure Pipelines'] },
+  { id: 2, stack: ['C# / .NET', 'Java', 'React', 'Next.js', 'Angular', 'Kafka', 'RabbitMQ', 'Kubernetes', 'GitLab CI'] },
+  { id: 3, stack: ['Java', 'Spring Boot', 'C# / .NET', 'Oracle', 'SQL Server', 'Redis', 'Kafka', 'RabbitMQ'] },
 ];
 
 export const metricas: MetricaBase[] = [
@@ -242,54 +282,8 @@ export const metricas: MetricaBase[] = [
   { id: 4, valor: '5+' },
 ];
 
-/** Competências apresentadas como badges. */
-export const competencias: string[] = [
-  'Java',
-  'Spring Boot',
-  'React',
-  'Angular',
-  'JavaScript',
-  'TypeScript',
-  'C#',
-  '.NET',
-  'APIs REST',
-  'PostgreSQL',
-  'MySQL',
-  'SQL Server',
-  'MongoDB',
-  'Docker',
-  'Git',
-  'GitHub',
-  'Salesforce',
-  'Apex',
-  'LWC',
-  'Azure',
-  'AWS',
-  'Oracle',
-  'Redis',
-  'Kafka',
-  'RabbitMQ',
-  'Kubernetes',
-  'Dynamics CRM',
-  'JWT',
-  'Maven',
-  'Elixir',
-  'Ionic',
-  'Scrum',
-  'Kanban',
-];
-
 export const formacoes: FormacaoBase[] = [
   { id: 1, instituicao: 'UNEX – Centro Universitário de Excelência' },
 ];
 
 export const idiomas: IdiomaBase[] = [{ id: 1 }, { id: 2 }];
-
-export const certificacoes: CertificacaoBase[] = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6, placeholder: true },
-];

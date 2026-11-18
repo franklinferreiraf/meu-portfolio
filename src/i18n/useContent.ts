@@ -5,11 +5,9 @@ import {
   habilidades,
   experiencias,
   metricas,
-  competencias,
   heroBadges,
   formacoes,
   idiomas,
-  certificacoes,
 } from '../data';
 import type {
   SobreCard,
@@ -19,7 +17,6 @@ import type {
   Metrica,
   Formacao,
   Idioma,
-  Certificacao,
 } from '../types';
 import { dicionarios, type Dicionario } from './context';
 import { useLanguage } from './useLanguage';
@@ -49,6 +46,8 @@ export function useContent() {
       return {
         ...base,
         ...texto,
+        // Alguns projetos têm título traduzido (ex.: "Projetos Salesforce e Freelancer").
+        titulo: (texto as { titulo?: string }).titulo ?? base.titulo,
         tags: base.tags.map(termo),
         metricas: base.metricas.map((m) => ({
           ...m,
@@ -70,7 +69,8 @@ export function useContent() {
 
     const timeline: Experiencia[] = experiencias.map((base) => ({
       ...base,
-      ...porId<{ cargo: string; empresa: string; atividades: string[] }>(
+      stack: base.stack.map(termo),
+      ...porId<{ periodo: string; cargo: string; empresa: string; destaques: string[] }>(
         t.experience.items,
         pt.experience.items,
         base.id,
@@ -92,11 +92,6 @@ export function useContent() {
       ...porId<{ idioma: string; nivel: string }>(t.education.languageItems, pt.education.languageItems, base.id),
     }));
 
-    const certs: Certificacao[] = certificacoes.map((base) => ({
-      ...base,
-      ...porId<{ nome: string; emissor: string }>(t.certifications.items, pt.certifications.items, base.id),
-    }));
-
     return {
       heroBadges: heroBadges.map(termo),
       sobreCards: cards,
@@ -104,10 +99,8 @@ export function useContent() {
       habilidades: categorias,
       experiencias: timeline,
       metricas: stats,
-      competencias: competencias.map(termo),
       formacoes: cursos,
       idiomas: linguas,
-      certificacoes: certs,
     };
   }, [t]);
 }

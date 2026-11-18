@@ -6,12 +6,17 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://franklin-ferreira-portfolio.vercel.app/projeto/nexor-os</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://franklin-ferreira-portfolio.vercel.app/projeto/ffsystem</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://franklin-ferreira-portfolio.vercel.app/projeto/marianne-soares-nutri</loc>
+    <loc>https://franklin-ferreira-portfolio.vercel.app/projeto/salesforce-freelancer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -22,6 +27,16 @@
   </url>
   <url>
     <loc>https://franklin-ferreira-portfolio.vercel.app/projeto/grupo-mais-saude</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://franklin-ferreira-portfolio.vercel.app/projeto/manutencao-industrial</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://franklin-ferreira-portfolio.vercel.app/projeto/marianne-soares-nutri</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

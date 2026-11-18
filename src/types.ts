@@ -30,6 +30,7 @@ export interface ProjetoBase {
   id: string;
   titulo: string;
   tags: string[];
+  /** Capa do projeto. Vazio quando não houver print (ex.: produto com dados reais) — exibe uma capa neutra. */
   imagem: string;
   /** URL do site publicado (Demo). Vazio quando não houver. */
   linkProjeto: string;
@@ -65,14 +66,17 @@ export interface HabilidadeCategoria extends HabilidadeCategoriaBase {
 
 export interface ExperienciaBase {
   id: number;
-  periodo: string;
+  /** Tecnologias principais exibidas como badges (nomes próprios, iguais nos dois idiomas). */
+  stack: string[];
 }
 
 /** Item da timeline de experiência profissional. */
 export interface Experiencia extends ExperienciaBase {
+  periodo: string;
   cargo: string;
   empresa?: string;
-  atividades: string[];
+  /** Principais entregas/atividades, exibidas como lista. */
+  destaques: string[];
 }
 
 export interface MetricaBase {
@@ -83,18 +87,6 @@ export interface MetricaBase {
 /** Estatística exibida na seção de métricas. */
 export interface Metrica extends MetricaBase {
   label: string;
-}
-
-export interface CertificacaoBase {
-  id: number;
-  /** Marca um card de "vaga" para certificações futuras. */
-  placeholder?: boolean;
-}
-
-/** Certificação ou curso. */
-export interface Certificacao extends CertificacaoBase {
-  nome: string;
-  emissor: string;
 }
 
 export interface FormacaoBase {
