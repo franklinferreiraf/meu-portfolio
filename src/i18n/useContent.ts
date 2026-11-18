@@ -79,7 +79,7 @@ export function useContent() {
 
     const stats: Metrica[] = metricas.map((base) => ({
       ...base,
-      label: porId<string>(t.metrics.items, pt.metrics.items, base.id),
+      ...porId<{ label: string; detalhe?: string }>(t.metrics.items, pt.metrics.items, base.id),
     }));
 
     const cursos: Formacao[] = formacoes.map((base) => ({

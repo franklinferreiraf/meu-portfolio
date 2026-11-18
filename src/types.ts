@@ -87,6 +87,8 @@ export interface MetricaBase {
 /** Estatística exibida na seção de métricas. */
 export interface Metrica extends MetricaBase {
   label: string;
+  /** Linha menor opcional exibida abaixo do rótulo. */
+  detalhe?: string;
 }
 
 export interface FormacaoBase {

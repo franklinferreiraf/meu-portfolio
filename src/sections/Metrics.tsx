@@ -12,6 +12,9 @@ const Metrics = () => {
           <div key={metrica.id} className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{metrica.valor}</div>
             <div className="text-muted text-sm md:text-base font-medium">{metrica.label}</div>
+            {metrica.detalhe && (
+              <div className="text-gray-500 text-xs md:text-sm mt-1 leading-snug">{metrica.detalhe}</div>
+            )}
           </div>
         ))}
       </div>

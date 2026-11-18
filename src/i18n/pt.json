@@ -44,10 +44,21 @@
   "metrics": {
     "ariaLabel": "Estatísticas",
     "items": {
-      "1": "Anos desenvolvendo software",
-      "2": "Projetos desenvolvidos",
-      "3": "Integrações & APIs REST",
-      "4": "Projetos Full Stack"
+      "1": {
+        "label": "Anos desenvolvendo software"
+      },
+      "2": {
+        "label": "Frentes de atuação",
+        "detalhe": "Produto próprio, consultoria internacional e sistemas corporativos"
+      },
+      "3": {
+        "label": "Stacks de back-end",
+        "detalhe": "Java, C#/.NET e TypeScript"
+      },
+      "4": {
+        "label": "Bancos de dados",
+        "detalhe": "PostgreSQL, SQL Server, Oracle, MySQL, MongoDB e Redis"
+      }
     }
   },
   "about": {

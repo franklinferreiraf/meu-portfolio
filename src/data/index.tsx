@@ -19,13 +19,13 @@ export const githubUsername = 'franklinferreiraf';
 /** Badges de stack exibidos logo abaixo da descrição do Hero. */
 export const heroBadges: string[] = [
   'APIs REST',
-  'React',
   'Java',
   'Spring Boot',
-  '.NET',
-  'Salesforce',
+  'C#/.NET',
+  'TypeScript',
+  'PostgreSQL',
+  'React',
   'Docker',
-  'Git',
   'Azure',
   'AWS',
 ];
@@ -277,9 +277,9 @@ export const experiencias: ExperienciaBase[] = [
 
 export const metricas: MetricaBase[] = [
   { id: 1, valor: '5+' },
-  { id: 2, valor: '10+' },
-  { id: 3, valor: '6+' },
-  { id: 4, valor: '5+' },
+  { id: 2, valor: '3' },
+  { id: 3, valor: '3' },
+  { id: 4, valor: '6' },
 ];
 
 export const formacoes: FormacaoBase[] = [
